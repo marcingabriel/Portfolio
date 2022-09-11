@@ -194,9 +194,21 @@ a {
 }
 
 .principal__right {
-  width: 40%;
+  width: 50%;
   margin: 2rem 0;
 }
+
+.principal__right img{
+  width: 100%;
+  opacity: 75%;
+  transition: 1.0s;
+}
+.principal__right img:hover{
+  opacity: 100%;
+  transform: scale(1.1);
+}
+
+
 
 .principal h1 {
   text-transform: uppercase;
@@ -351,7 +363,7 @@ a {
 .sobre-mim__descricao-buttons-email{
     text-align: center;
     width: 320px;
-    margin-left: 170px;
+    margin-left: 120px;
 }
 .sobre-mim__descricao-buttons-email p{
   margin-left: 12px;
