@@ -289,6 +289,7 @@ a {
 .projetos__card-button:hover {
   background-color: #272727;
   text-shadow: 1px 1px 3px #00bbc5;
+  cursor: pointer;
 }
 
 @keyframes move {
@@ -340,10 +341,20 @@ a {
   padding: 9px 0 5px;
 }
 
+
 .principal__botao-linkedin img,
 .principal__botao-github img,
 .sobre-mim__descricao-buttons-email img {
   width: 22px;
+}
+
+.sobre-mim__descricao-buttons-email{
+    text-align: center;
+    width: 320px;
+    margin-left: 170px;
+}
+.sobre-mim__descricao-buttons-email p{
+  margin-left: 12px;
 }
 
 .sobre-mim {
