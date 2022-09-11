@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Marcio Gabriel">
+    <meta name="keywords" content="portfolio, html, front-end, desenvolvimento, css, javascript">
+    <title>Marcio Gabriel</title>
+    <link rel="icon" href="./icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <header>
+    <nav data-menu="suave">
+       <p><a href="#home">&lsaquo;GS/&rsaquo;</a></p>
+       <button data-menu="button" aria-controls="menu"></button>
+      <ul data-menu="list" id="menu">
+        <a href="#home">
+        <li>Home</li>
+      </a>
+        <a href="#sobre">
+          <li>Sobre</li>
+        </a>
+        <a href="#tecnologias">
+        <li>Tecnologias</li>
+      </a>
+      <a href="#projetos">
+        <li>Projetos</li>
+      </a>
+      </ul>
+    </nav>
+  </header>
+
+    <main>
+      <section class="principal" id="home" >
+        <div class="principal__left">
+          <h1>Olá, eu sou</h1>
+            <span class="principal__sentence"></span>
+            <span class="principal__input-cursor"></span>
+          <h1>Engenheiro Da Computação</h1>
+          <div class="principal__botao">
+            <a href="https://www.linkedin.com/in/gabrielasouza-/" target="_blank">
+              <div class="principal__botao-linkedin">
+                <img src="./images/linkedin.png" alt="" />
+                <p>LinkedIn</p>
+              </div>
+            </a>
+            <a href="https://github.com/gabrielaguaru" target="_blank">
+              <div class="principal__botao-github">
+                <img src="./images/github.png" alt="" />
+                <p>Github</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="principal__right">
+          <img src="./images/code.svg" alt="Ilustração representando uma desenvolvedora sentada na cadeira mexendo no notebook com ambiente em volta." data-tilt>
+        </div>
+        
+        <div class="scroll" data-menu="suave"><a href="#sobre" > <p> scroll down </p> <img src="./images/scroll.png" alt="Setinha indicando para rolar a tela para baixo"></a></div>
+      </section>
+
+	  
+      <section class="sobre-mim" id="sobre">
+        <div class="sobre-mim__foto">
+			<div class ="animated-border"> </div>
+				<div class="corner">
+					<div class = "content">
+						<img src="./images/eu.jpg" alt="Uma selfie da Gabriela Souza" />
+					</div>
+					<div class ="teste"></div>
+				</div>
+        </div>
+        <div class="sobre-mim__descricao" >
+          <h1>Sobre mim</h1>
+          <h2>Guarujá, São Paulo</h2>
+          <p>
+            Olá! Sou biomédica e atualmente estou em transição de carreira com dedicação nos estudos para
+            futuramente ser uma desenvolvedora fullstack. Em jul/2021 tomei a decisão de estudar por conta própria
+            fazendo diversos cursos, e com 3 meses estudando consegui meu primeiro freelancer. Estou cursando Análise e 
+            Desenvolvimento de Sistemas na FIAP e continuo meus estudos, tendo em mente que estamos sempre em constante aprendizado.
+          </p>
+          <div class="sobre-mim__descricao-buttons">
+            <a href="./images/Gabriela Souza.pdf" download="">
+              <div class="sobre-mim__descricao-buttons-curriculo">
+                <img src="./images/download-da-nuvem.png" alt="" />
+                <p>Currículo</p>
+              </div>
+            </a>
+            <a
+              href="mailto: gabrielaguaru@yahoo.com.br?subject=Gabi, vim pelo seu portfólio! :)"
+              target="_blank"
+            >
+              <div class="sobre-mim__descricao-buttons-email">
+                <img src="./images/email.png" alt="" />
+                <p>E-mail</p>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section class="projetos" id="projetos" >
+        <h1>Projetos</h1>
+        <div class="projetos__wrapper">
+          <section class="projetos__card">
+            <a href="https://gabrielaguaru.github.io/animaisfantasticos/" target="_blank">
+            <img src="./images/projeto2.png" alt="" class="projeto-img"/>
+          </a>
+            <h2>Animais Fantásticos</h2>
+            <p>
+              Projeto desenvolvido a partir do curso de JavaScript ES6+ completo da Origamid, para por em prática meus estudos iniciais de JS. 
+            </p>
+            <span>Tecnologias usadas no projeto: HTML, CSS, JavaScript Vanilla.</span>
+            <a href="https://gabrielaguaru.github.io/animaisfantasticos/" target="_blank">
+              <div class="projetos__card-button">
+                <img src="./images/link.png" alt="Imagem de raposa representando meu projeto número 1">
+                Visualizar
+              </div>
+            </a>
+          </section>
+          <section class="projetos__card">
+            <a href="https://gabrielaguaru.github.io/vingadores/" target="_blank">
+            <img src="./images/projeto1.png" alt="Imagem do filme vingadores representando meu projeto número 2" class="projeto-img"/>
+            </a>
+            <h2>Vingadores</h2>
+            <p>
+              Meu primeiro projeto me aventurando na área de tecnologia, esse elaborado na minha terceira semana de estudos em HTML e CSS (agosto/2021). A partir dele pude evoluir bastante.
+            </p>
+            <span>Tecnologias usadas no projeto: HTML e CSS.</span>
+            <a href="https://gabrielaguaru.github.io/vingadores/" target="_blank"
+              >
+              <div class="projetos__card-button">
+              <img src="./images/link.png" alt="">
+              Visualizar
+            </div>
+            </a>
+          </section>
+          <section class="projetos__card">
+            <a href="https://gabrielaguaru.github.io/pokedex/" target="_blank">
+            <img src="./images/projeto3.png" alt="" class="projeto-img"/>
+            </a>
+            <h2>Pokédex</h2>
+            <p>
+              Projeto realizado em ReactJS consumindo uma API de Pokémon.
+            </p>
+            <span>Tecnologias usadas no projeto: HTML, CSS, ReactJS, JSX.</span>
+            <a href="https://gabrielaguaru.github.io/pokedex/" target="_blank">
+              <div class="projetos__card-button">
+                <img src="./images/link.png" alt="Imagem logo do pokémon representando meu projeto número 3">
+                Visualizar
+              </div>
+            </a>
+          </section>
+          <section class="projetos__card">
+            <a href="https://gabrielaguaru.github.io/casa-verde/" target="_blank">
+            <img src="./images/projeto4.png" alt="Imagem logo de folhas de uma planta representando meu projeto número 4" class="projeto-img"/>
+          </a>
+            <h2>Casa Verde</h2>
+            <p>
+              Projeto realizado em ReactJS a partir do 7 days of code da Alura. O projeto encontra-se em fase de desenvolvimento.
+            </p>
+            <span>Tecnologias usadas no projeto: HTML, CSS, ReactJS, JSX, Styled Components (CSS-in-JS).</span>
+            <a href="https://gabrielaguaru.github.io/casa-verde/" target="_blank">
+              <div class="projetos__card-button">
+                <img src="./images/link.png" alt="">
+                Visualizar
+              </div>
+            </a>
+   
+          </section>
+        </div>
+      </section>
+
+      <footer>
+        <p>Desenvolvido por</p><a href="https://www.linkedin.com/in/gabrielasouza-/" target="_blank"><span> Marcio Gabriel</span></a>
+      </footer>
+    </main>
+
+    <script src="./js/script.js" type="module"></script>
+    <script src="assets/js/tying.js"></script>
+  </body>
+</html>
