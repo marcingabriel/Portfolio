@@ -16,7 +16,9 @@
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
+ 
 <body>
+      <!-- Barra de navegação -->
   <header>
     <nav data-menu="suave">
       <p><a href="#home">&lsaquo;GS/&rsaquo;</a></p>
@@ -24,21 +26,23 @@
       <ul data-menu="list" id="menu">
         <a href="#home">
           <li>Home</li>
-        </a>
-        <a href="#sobre">
-          <li>Sobre</li>
-        </a>
+
         <a href="#tecnologias">
           <li>Tecnologias</li>
         </a>
         <a href="#projetos">
           <li>Projetos</li>
         </a>
+      </a>
+      <a href="#sobre">
+        <li>Sobre</li>
+      </a>
       </ul>
     </nav>
   </header>
 
   <main>
+      <!-- Cabeçalho/home -->
     <section class="principal" id="home">
       <div class="principal__left">
         <h1>Olá, eu sou</h1>
@@ -72,39 +76,60 @@
     </section>
 
 
-    <section class="sobre-mim" id="sobre">
-      <div class="sobre-mim__foto">
-        <div class="animated-border"> </div>
-        <div class="corner">
+    <!-- Tecnologias -->
+    <section class="tecnologias" >
+     
+      <h1>Tecnologias</h1>
+      
+      <div class="features">
+        <article>
+          <span class="icon brands fa-php"></span>
           <div class="content">
-            <img src="./images/eu.jpg" alt="Uma selfie da Gabriela Souza" />
+            <h3>PHP</h3>
+            <p>Devido a projetos anteriores, possuo experiência tanto prática quanto teórica na linguagem PHP.</p>
           </div>
-          <div class="teste"></div>
-        </div>
-      </div>
-      <div class="sobre-mim__descricao">
-        <h1>Sobre mim</h1>
-        <h2>Timoteo, Minas Gerais</h2>
-        <p>
-          Olá! Sou estudante de engenharia de computação, atualmente estudo no CEFET-MG e Busco uma oportunidade para desenvolver, aprender e obter experiência para melhorar meus conhecimentos, com dedicação nos estudos para futuramente me tornar um desenvolvedor fullstack. 
-        </p>
-        <div class="sobre-mim__descricao-buttons">
-          <a href="./images/Gabriela Souza.pdf" download="">
-            <div class="sobre-mim__descricao-buttons-curriculo">
-              <img src="./images/download-da-nuvem.png" alt="" />
-              <p>Currículo</p>
-            </div>
-          </a>        
-            <div class="sobre-mim__descricao-buttons-email" onclick="copiarTexto()">
-              <img src="./images/email.png" alt="" />
-              <p>marciogabriel.gs27@gmail.com</p>
-            </div>
-          </a>
-        </div>
-
+        </article>
+        <article>
+          <span class="icon brands fa-bootstrap"></span>
+          <div class="content">
+            <h3>Bootstrap</h3>
+            <p>Devido a projetos anteriores, possuo experiência tanto prática quanto teórica na linguagem PHP.</p>
+          </div>
+        </article>
+        <article>
+          <span class="icon brands fa-laravel"></span>
+          <div class="content">
+            <h3>Laravel</h3>
+            <p>Um dos mais famosos e utilizados frameworks da linguagem PHP é um dos meus objetos de estudo e trabalho.</p>
+          </div>
+        </article>
+        <article>
+          <span class="icon brands fa-vuejs"></span>
+          <div class="content">
+            <h3>Vue.js</h3>
+            <p>Utilizando a framework Vue.js realizei possuo uma certa experiência se tratando de Javascript.</p>
+          </div>
+        </article>
+        <article>
+          <span class="icon solid fa-database"></span>
+          <div class="content">
+            <h3>Terraform</h3>
+            <p>Interessado pela área de Devops, sigo estudando a área e suas dependências.</p>
+          </div>
+        </article>
+        <article>
+          <span class="icon brands fa-python"></span>
+          <div class="content">
+            <h3>Python</h3>
+            <p>Iniciei nesta área de estudo visando me aprimorar a respeito dos conteúdos de automação.</p>
+          </div>
+        </article>
+        
       </div>
     </section>
 
+
+              <!-- Projetos -->
     <section class="projetos" id="projetos">
       <h1>Projetos</h1>
       <div class="projetos__wrapper">
@@ -181,6 +206,41 @@
       </div>
     </section>
 
+       <!-- Sobre mim -->
+    <section class="sobre-mim" id="sobre">
+      <div class="sobre-mim__foto">
+        <div class="animated-border"> </div>
+        <div class="corner">
+          <div class="content">
+            <img src="./images/eu.jpg" alt="Uma selfie da Gabriela Souza" />
+          </div>
+          <div class="teste"></div>
+        </div>
+      </div>
+      <div class="sobre-mim__descricao">
+        <h1>Sobre mim</h1>
+        <h2>Timoteo, Minas Gerais</h2>
+        <p>
+          Olá! Sou estudante de engenharia de computação, atualmente estudo no CEFET-MG e Busco uma oportunidade para desenvolver, aprender e obter experiência para melhorar meus conhecimentos, com dedicação nos estudos para futuramente me tornar um desenvolvedor fullstack. 
+        </p>
+        <div class="sobre-mim__descricao-buttons">
+          <a href="./images/Gabriela Souza.pdf" download="">
+            <div class="sobre-mim__descricao-buttons-curriculo">
+              <img src="./images/download-da-nuvem.png" alt="" />
+              <p>Currículo</p>
+            </div>
+          </a>        
+            <div class="sobre-mim__descricao-buttons-email" onclick="copiarTexto()">
+              <img src="./images/email.png" alt="" />
+              <p>marciogabriel.gs27@gmail.com</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+     <!-- Rodape -->
     <footer>
       <p>Desenvolvido por</p><a href="https://www.linkedin.com/in/gabrielasouza-/" target="_blank"><span> Marcio
           Gabriel</span></a>
