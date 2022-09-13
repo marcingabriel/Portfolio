@@ -328,16 +328,6 @@ a {
 
 /* Features */
 
-header.major> :last-child {
-  display: flex;
-  margin: 0 0 2em 0;
-  padding: 0 0.75em 0.5em 0;
-}
-
-hr.major {
-  margin: 3em 0;
-}
-
 .features {
   display: -moz-flex;
   display: -webkit-flex;
@@ -390,13 +380,13 @@ hr.major {
   display: block;
   height: 7.6em;
   line-height: 7.6em;
-  margin: 0 2em 0 0;
+  margin: 2em 2em 2em 0;
+  position: relative;
   text-align: center;
   width: 7.6em;
   padding: 0.2px 0.2px 0.2px;
 
-  z-index: -1;
-  inset: -1px;
+  
   border-radius: 8px;
   background: linear-gradient(-45deg,
       rgb(71, 19, 161),
@@ -404,10 +394,9 @@ hr.major {
   background-size: 400%;
   animation: move infinite forwards 4s;
  
-  
   transform: rotate(45deg);
   border-radius: 0.25rem;
-  
+  transition: 0.5s;
   
 }
 
@@ -417,10 +406,6 @@ hr.major {
   position: relative;
   top: 0.05em;
   transform: rotate(-45deg);
-  
-  
-  
- 
   
 }
 
@@ -439,6 +424,11 @@ hr.major {
   position: absolute;
   top: 48%;
   width: 7em;
+}
+
+.features article .icon:hover{
+  transform: scale(1.5);
+  transform: rotate(36deg);
 }
 
 .features article .content {
@@ -487,9 +477,9 @@ hr.major {
   }
 
   .features article .icon {
-    height: 8em;
-    line-height: 8em;
-    width: 8em;
+    height: 7em;
+    line-height: 7em;
+    width: 7em;
   }
 
   .features article .icon:before {
@@ -501,6 +491,8 @@ hr.major {
     margin: -3em 0 0 -3em;
     width: 6em;
   }
+
+ 
 }
 
 @media screen and (max-width: 480px) {
@@ -526,6 +518,8 @@ hr.major {
   .features article .icon:before {
     font-size: 1.25rem;
   }
+
+  
 }
 
 /* Icon */
@@ -588,7 +582,7 @@ ul.icons li .icon:before {
 }
 
 
-
+  /* Sobre mim */
 
 .principal__botao-github::before,
 .sobre-mim__descricao-buttons-curriculo::before {
@@ -633,7 +627,7 @@ ul.icons li .icon:before {
 .sobre-mim__descricao-buttons-email {
   text-align: center;
   width: 320px;
-  margin-left: 120px;
+  margin-left: 4.0em;
 }
 
 .sobre-mim__descricao-buttons-email p {
@@ -831,6 +825,11 @@ ul.icons li .icon:before {
   .tecnologias {
     padding: 6.5%;
   }
+
+  .sobre-mim__descricao-buttons-email{
+    margin-left: 25px;
+  }
+
 }
 
 @media (max-width: 880px) {
@@ -839,7 +838,7 @@ ul.icons li .icon:before {
   .sobre-mim,
   .experiencia,
   .projetos {
-    padding: 22% 0;
+    padding: 30% 0;
     text-align: center;
   }
 
@@ -872,8 +871,12 @@ ul.icons li .icon:before {
 
   .principal__botao,
   .sobre-mim__descricao-buttons {
-    width: 320px;
-    margin: 1rem auto;
+    width: 320px;  
+    flex-direction: column;
+  }
+  .sobre-mim__descricao-buttons-email{
+    margin-top: 25px;
+    margin-left: 0px;
   }
 
   .projetos__wrapper {
@@ -911,6 +914,9 @@ ul.icons li .icon:before {
     justify-content: space-around;
   }
 
+  .projetos__card{
+    margin-bottom: 55px;
+  }
   footer {
     font-size: 0.8rem;
   }
