@@ -1,5 +1,6 @@
 @import 'menu-mobile.css';
-@import url(fontawesome-all.min.css);
+@import url(all.min.css);
+@import url(fontawesome.min.css);
 
 body {
   margin: 0;
@@ -81,6 +82,7 @@ header {
 
 nav {
   padding: 0 15%;
+
   display: flex;
   align-items: center;
   background-color: #151515;
@@ -124,13 +126,26 @@ nav p {
 }
 
 nav p a {
-  color: #1a8111;
+  color: white;
   transition: 0.3s;
 }
 
 nav p a:hover {
-  color: rgba(147, 88, 247, 1);
+  color: #1a8111;
 }
+nav .ic:before{
+  padding: 10px;
+}
+
+
+nav .ic{
+  color:rgba(147, 88, 247, 1) ;
+}
+nav .ic:hover{
+  color: #1a8111;
+
+}
+
 
 .principal,
 .sobre-mim,
@@ -557,6 +572,7 @@ a {
 .icon.brands:before {
   font-family: 'Font Awesome 5 Brands';
 }
+
 
 ul.icons {
   cursor: default;
