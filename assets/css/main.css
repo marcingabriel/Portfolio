@@ -4,16 +4,30 @@
 
 
 /* Color Theme Swatches in Hex */
-.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-1-hex { color: #022601; }
-.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-2-hex { color: #010D00; }
-.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-3-hex { color: #3D8C27; }
-.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-4-hex { color: #588C49; }
-.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-5-hex { color: #0D0D0D; }
+.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-1-hex {
+  color: #022601;
+}
+
+.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-2-hex {
+  color: #010D00;
+}
+
+.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-3-hex {
+  color: #3D8C27;
+}
+
+.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-4-hex {
+  color: #588C49;
+}
+
+.Green-HUD-Camera-Interface-Motion-Graphic-Element-V1-5-hex {
+  color: #0D0D0D;
+}
 
 body {
   margin: 0;
   border: 0;
-  background-color:  #0e0e0ef6;
+  background-color: #0e0e0ef6;
   color: white;
   font-family: "Inter", sans-serif;
   letter-spacing: 1px;
@@ -142,15 +156,17 @@ nav p a {
 nav p a:hover {
   color: #1a8111;
 }
-nav .ic:before{
+
+nav .ic:before {
   padding: 10px;
 }
 
 
-nav .ic{
-  color:rgba(147, 88, 247, 1) ;
+nav .ic {
+  color: rgba(147, 88, 247, 1);
 }
-nav .ic:hover{
+
+nav .ic:hover {
   color: #1a8111;
 
 }
@@ -410,18 +426,18 @@ a {
   width: 7.6em;
   padding: 0.2px 0.2px 0.2px;
 
-  
+
   border-radius: 8px;
   background: linear-gradient(-45deg,
       rgb(71, 19, 161),
       #0f9c02);
   background-size: 400%;
   animation: move infinite forwards 4s;
- 
+
   transform: rotate(45deg);
   border-radius: 0.25rem;
   transition: 0.5s;
-  
+
 }
 
 .features article .icon:before {
@@ -430,7 +446,7 @@ a {
   position: relative;
   top: 0.05em;
   transform: rotate(-45deg);
-  
+
 }
 
 /* --- Losangos --- */
@@ -450,7 +466,7 @@ a {
   width: 7em;
 }
 
-.features article .icon:hover{
+.features article .icon:hover {
   transform: scale(1.5);
   transform: rotate(36deg);
 }
@@ -471,80 +487,7 @@ a {
   margin-bottom: 0;
 }
 
-/* Ajustar diacordo com a tela */
-@media screen and (max-width: 980px) {
-  .features {
-    margin: 0 0 2em 0;
-    width: 100%;
-  }
 
-  .features article {
-    margin: 0 0 3em 0;
-    width: 100%;
-  }
-
-  .features article:nth-child(2n - 1) {
-    margin-right: 0;
-  }
-
-  .features article:nth-child(2n) {
-    margin-left: 0;
-  }
-
-  .features article:nth-last-child(1),
-  .features article:nth-last-child(2) {
-    margin-bottom: 3em;
-  }
-
-  .features article:last-child {
-    margin-bottom: 0;
-  }
-
-  .features article .icon {
-    height: 7em;
-    line-height: 7em;
-    width: 7em;
-  }
-
-  .features article .icon:before {
-    font-size: 2.25rem;
-  }
-
-  .features article .icon:after {
-    height: 6em;
-    margin: -3em 0 0 -3em;
-    width: 6em;
-  }
-
- 
-}
-
-@media screen and (max-width: 480px) {
-  .features article .icon {
-    height: 6em;
-    line-height: 6em;
-    margin: 0 0 1.5em 0;
-    width: 6em;
-  }
-
-  .features article .icon:before {
-    font-size: 1.5rem;
-  }
-
-  .features article .icon:after {
-    height: 4em;
-    margin: -2em 0 0 -2em;
-    width: 4em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .features article .icon:before {
-    font-size: 1.25rem;
-  }
-
-  
-}
 
 /* Icon */
 .icon {
@@ -607,7 +550,7 @@ ul.icons li .icon:before {
 }
 
 
-  /* Sobre mim */
+/* Sobre mim */
 
 .principal__botao-github::before,
 .sobre-mim__descricao-buttons-curriculo::before {
@@ -830,6 +773,8 @@ ul.icons li .icon:before {
   background-color: rgba(101, 24, 180, 1);
 }
 
+
+/* Ajustar diacordo com a tela */
 @media (max-width: 1325px) {
   .principal h1 {
     font-size: 1rem;
@@ -851,7 +796,7 @@ ul.icons li .icon:before {
     padding: 6.5%;
   }
 
-  .sobre-mim__descricao-buttons-email{
+  .sobre-mim__descricao-buttons-email {
     margin-left: 25px;
   }
 
@@ -896,10 +841,11 @@ ul.icons li .icon:before {
 
   .principal__botao,
   .sobre-mim__descricao-buttons {
-    width: 320px;  
+    width: 320px;
     flex-direction: column;
   }
-  .sobre-mim__descricao-buttons-email{
+
+  .sobre-mim__descricao-buttons-email {
     margin-top: 25px;
     margin-left: 0px;
   }
@@ -919,7 +865,26 @@ ul.icons li .icon:before {
 @media (max-width: 460px) {
   .principal span {
     font-size: 1.8rem;
+
   }
+
+  .sobre-mim__descricao-buttons-email {
+    font-size: 0.8rem;
+    width: 0%;
+    margin-left: 5.5em;
+    background-color: #0D0D0D;
+
+  }
+
+  .sobre-mim__descricao-buttons-email:before {
+    width: 0%;
+    display: flex;
+
+    padding: 0px 0px 0px;
+    justify-content: space-evenly;
+
+  }
+
 
   .principal .principal__input-cursor {
     height: 30px;
@@ -939,10 +904,96 @@ ul.icons li .icon:before {
     justify-content: space-around;
   }
 
-  .projetos__card{
+  .projetos__card {
     margin-bottom: 55px;
   }
+
   footer {
     font-size: 0.8rem;
   }
+}
+
+@media screen and (max-width: 980px) {
+  .features {
+    margin: 0 0 2em 0;
+    width: 100%;
+  }
+
+  .features article {
+    margin: 0 0 3em 0;
+    width: 100%;
+  }
+
+  .features article:nth-child(2n - 1) {
+    margin-right: 0;
+  }
+
+  .features article:nth-child(2n) {
+    margin-left: 0;
+  }
+
+  .features article:nth-last-child(1),
+  .features article:nth-last-child(2) {
+    margin-bottom: 3em;
+  }
+
+  .features article:last-child {
+    margin-bottom: 0;
+  }
+
+  .features article .icon {
+    height: 7em;
+    line-height: 7em;
+    width: 7em;
+  }
+
+  .features article .icon:before {
+    font-size: 2.25rem;
+  }
+
+  .features article .icon:after {
+    height: 6em;
+    margin: -3em 0 0 -3em;
+    width: 6em;
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+  .features {
+    margin: 0 0 2.5em 0;
+    width: 100%;
+  }
+
+  .features article {
+    margin: 0 0 4em 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .features article .icon {
+    height: 4.7em;
+    line-height: 4.7em;
+    margin: 0 0 3.5em 0;
+    width: 4.7em;
+  }
+
+  .features article .icon:before {
+    font-size: 1.5rem;
+  }
+
+  .features article .icon:after {
+    height: 4em;
+    margin: -2em 0 0 -2em;
+    width: 4em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .features article .icon:before {
+    font-size: 1.10rem;
+  }
+
+
 }
