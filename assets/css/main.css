@@ -85,7 +85,7 @@ footer span:hover {
 .tecnologias,
 .sobre-mim {
   background-color: #0D0D0D;
-  z-index: 0;
+  z-index: -1;
   position: relative;
 }
 
@@ -178,8 +178,7 @@ nav .ic:hover {
 .projetos {
   padding: 6.5% 15%;
   min-height: 35vh;
-  margin-bottom: 5rem;
-  padding-bottom: 300px;
+  
 }
 
 section h1 {
@@ -197,6 +196,7 @@ a {
   align-items: center;
   position: relative;
   min-height: 60vh;
+
 }
 
 .principal .scroll {
@@ -708,7 +708,7 @@ ul.icons li .icon:before {
 .projetos__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10%;
+  gap: 6%;
   margin-bottom: 5rem;
 }
 
