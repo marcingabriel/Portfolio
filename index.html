@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css" />
-  
+  <link rel="stylesheet" href="assets/css/animation.css" />
 
 
 <body>
@@ -45,6 +45,47 @@
   <main>
     <!-- Cabeçalho/home -->
     <section class="principal" id="home">
+      <div class="bubbles">
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:27;"></span>
+        <span style="--i:28;"></span>
+        <span style="--i:29;"></span>
+        <span style="--i:30;"></span>
+        <span style="--i:31;"></span>
+        <span style="--i:32;"></span>
+        <span style="--i:33;"></span>
+        <span style="--i:34;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:25;"></span>
+        
+       
+      </div>
       <div class="principal__left">
         <h1>Olá, eu sou</h1>
         <span class="principal__sentence"></span>
@@ -60,7 +101,7 @@
           </a>
           <a href="https://github.com/marcingabriel" target="_blank">
             <div class="principal__botao-github">
-              <img src="./images/github.png" alt="" />
+              <img class="autoShow" src="./images/github.png" alt="" />
               <p>Github</p>
             </div>
           </a>
@@ -79,18 +120,18 @@
     <!-- Tecnologias -->
     <section class="tecnologias" id="tecnologias">
 
-      <h1>Tecnologias</h1>
+      <h1 class="autoShow">Tecnologias</h1>
 
       <div class="features">
-        <article>
+        <article class="autoShow">
           <span class="icon brands fa-java"></span>
           <div class="content">
             <h3>Java</h3>
             <p>Devido a estudos e projetos anteriores, possuo experiência tanto prática quanto teórica na linguagem
               Java.</p>
           </div>
-        </article>
-        <article>
+        </article >
+        <article class="autoShow">
           <span class="icon brands fa-github"></span>
           <div class="content">
             <h3>Git/GitHub</h3>
@@ -98,7 +139,7 @@
               utilização dessa tecnologia.</p>
           </div>
         </article>
-        <article>
+        <article class="autoShow">
           <span class="icon brands fa-html5"></span>
           <div class="content">
             <h3>Html/Css</h3>
@@ -107,7 +148,7 @@
               trabalho.</p>
           </div>
         </article>
-        <article>
+        <article class="autoShow">
           <span class="icon brands fa-js"></span>
           <div class="content">
             <h3>JavaScript</h3>
@@ -115,7 +156,7 @@
               possuo uma certa experiência se tratando dessa linguagem.</p>
           </div>
         </article>
-        <article>
+        <article class="autoShow">
           <span class="icon fa-solid fa-c "></span>
           <div class="content">
             <h3>Linguagem C</h3>
@@ -123,7 +164,7 @@
               quanto teórica na linguagem C.</p>
           </div>
         </article>
-        <article>
+        <article class="autoShow">
           <span class="icon brands fa-python"></span>
           <div class="content">
             <h3>Python</h3>
@@ -137,13 +178,58 @@
 
 
     <!-- Projetos -->
-    <section class="projetos" id="projetos">
+    <section class="projetos " id="projetos">
       <h1>Projetos</h1>
       <div class="projetos__wrapper">
+
+          <!-- CasasContam -->
+          <section class="projetos__card autoShow">
+            <a href="https://casas-contam-historia.vercel.app/" target="_blank">
+              <div class="card-img"> 
+                <img src="./images/casascontam.png" alt="" class="projeto-img" />
+              </div>
+             
+            </a>
+            <h2>Projeto "Casas Contam Historia" </h2>
+            <p>
+              Desenvolvimento de um site interativo para catalogar residências históricas de Timóteo, MG, 
+              com foco em educação patrimonial. Utilizou tecnologias como React, Vite e TailwindCSS para criar um 
+              design responsivo e acessível, incluindo tradução em Libras, textos com áudio e modo de alto contraste. 
+              O projeto foi apresentado na 1ª Semana de Arquitetura e Urbanismo (SEMAU) e obteve feedback positivo pela integração de recursos inclusivos e educativos.
+            </p>
+            <span>Tecnologias usadas no projeto: Html, CSS, JS, TailwindCSS, ReactJS + Vite.</span>
+            <a href="https://casas-contam-historia.vercel.app/" target="_blank">
+              <div class="projetos__card-button">
+                <img src="./images/link.png" alt="Botao visualizar projeto">
+                Visualizar
+              </div>
+            </a>
+          </section>
+
+          <!-- Estacionamento -->
+          <section class="projetos__card autoShow">
+            <a href="" target="_blank">
+              <div class="card-img"> 
+                <img src="./images/maquete.jpg" alt="" class="projeto-img" />
+              </div>
+             
+            </a>
+            <h2>Protótipo de Sistema Embarcado para Estacionamentos  </h2>
+            <p>
+              Projeto interdisciplinar desenvolvido entre os cursos de Arquitetura e Urbanismo e Engenharia de Computação do CEFET-MG. 
+              Consistiu na construção de uma maquete de estacionamento e na implementação de um protótipo de sistema embarcado para contabilizar e exibir vagas disponíveis em tempo real. 
+              Apresentado na META (Mostra Específica de Trabalhos e Aplicações), conquistou o terceiro lugar na competição.
+            </p>
+            <span>Tecnologias usadas no projeto: Sistemas embarcados (microcontroladores), Impressão 3D.  </span>
+  
+          </section>
         <!-- Frogguer -->
-        <section class="projetos__card">
+        <section class="projetos__card autoShow">
           <a href="https://github.com/marcingabriel/FroggerGame" target="_blank">
-            <img src="./images/projeto2.png" alt="" class="projeto-img" />
+            <div class="card-img"> 
+              <img src="./images/projeto2.png" alt="" class="projeto-img" />
+            </div>
+           
           </a>
           <h2>Frogguer Game </h2>
           <p>
@@ -159,9 +245,11 @@
           </a>
         </section>
         <!-- Android -->
-        <section class="projetos__card">
+        <section class="projetos__card autoShow">
           <a href="https://marcingabriel.github.io/projeto_site/android.html" target="_blank">
+            <div class="card-img"> 
             <img src="./images/projeto1.png" alt="Botao visualizar projeto" class="projeto-img" />
+            </div>
           </a>
           <h2>Site Android</h2>
           <p>
@@ -176,9 +264,11 @@
             </div>
           </a>
         </section>
-        <section class="projetos__card">
+        <section class="projetos__card autoShow">
           <a href="https://marcingabriel.github.io/projeto-social/" target="_blank">
+            <div class="card-img"> 
             <img src="./images/projeto3.jpg" alt="" class="projeto-img" />
+            </div>
           </a>
           <h2>Site com redes sociais</h2>
           <p>
@@ -192,11 +282,13 @@
             </div>
           </a>
         </section>
-        <section class="projetos__card">
+        <section class="projetos__card autoShow">
           <!-- Outros Projetos -->
           <section class="projetos__card">
             <a href="https://github.com/marcingabriel?tab=repositories" target="_blank">
-              <img src="./images/githubprojects.jpg" alt="" class="projeto-img" />
+              <div class="card-img"> 
+              <img src="./images/githubprojects.jpg " alt="" class="projeto-img " />
+              </div>
             </a>
             <h2>Outros projetos </h2>
             <p>
@@ -222,21 +314,21 @@
       <div class="sobre-mim__foto">
         <div class="animated-border"> </div>
         <div class="corner">
-          <div class="content">
-            <img src="./images/eu.jpg" alt="Foto minha" />
+          <div class="content ">
+            <img class="autoShow" src="./images/eu.jpg" alt="Foto minha" />
           </div>
           <div class="teste"></div>
         </div>
       </div>
       <div class="sobre-mim__descricao">
-        <h1>Sobre mim</h1>
-        <h2>Timoteo, Minas Gerais</h2>
-        <p>
+        <h1 class="autoShow">Sobre mim</h1>
+        <h2 class="autoShow">Timoteo, Minas Gerais</h2>
+        <p class="autoShow">
           Olá! Sou estudante de engenharia de computação, atualmente estudo no CEFET-MG e Busco uma oportunidade para
           desenvolver, aprender e obter experiência para melhorar meus conhecimentos, com dedicação nos estudos para
           futuramente me tornar um desenvolvedor fullstack.
         </p>
-        <div class="sobre-mim__descricao-buttons">
+        <div class="sobre-mim__descricao-buttons autoShow">
           <a href="images/Currículo.pdf" download="" target="_blank">
             <div class="sobre-mim__descricao-buttons-curriculo">
               <img src="./images/download-da-nuvem.png" alt="" />

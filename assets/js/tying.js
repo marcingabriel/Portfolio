@@ -11,3 +11,12 @@ var speed = 100;
 
 window.addEventListener("load", typeWriter);
 
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const bubbles = document.querySelectorAll('.bubbles span');
+        bubbles.forEach(bubble => {
+            const randomDelay = Math.random() * 10; // Atraso aleatório entre 0 e 10 segundos
+            bubble.style.setProperty('--delay', `${randomDelay}s`);
+        });
+    });

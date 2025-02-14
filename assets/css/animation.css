@@ -1,0 +1,88 @@
+.autoRotate {
+    animation: autoRotateAnimation;
+    animation-timeline: view();
+}
+
+@keyframes autoRotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(120deg);
+    }
+}
+
+
+.autoShow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+
+}
+@keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.autoBLur{
+    animation: autoBLurAnimation linear both;
+    animation-timeline: view();
+}
+@keyframes autoBLurAnimation{
+    0%{
+        filter: blur(40px);
+    }
+    45%, 55%{
+        filter: blur(0px);
+    }
+    100%{
+        filter: blur(40px);
+    }
+}
+
+.bubbles{
+    position: absolute;
+    display: flex;
+    z-index: -100;
+    right: 0;
+    opacity: 0.5;
+
+}
+
+
+.bubbles span{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: #0e7c00;
+    margin: 0 4px;
+    border-radius: 40%;
+    box-shadow: 0 0 10px #0b5302, 0 0 50px #0e7c00, 0 0 100px #0e7c00;
+
+    animation: animate 5s linear infinite;
+    animation-duration: calc(155s / var(--i));
+    animation-delay: var(--delay); /* Adicionando o atraso */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.bubbles span:nth-child(3n+3){
+    background: #03136e;
+    box-shadow: 0 0 10px #020158, 0 0 50px #03136e, 0 0 100px #03136e;
+
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+        opacity: 1; /* Inicia invisível */
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+        opacity: 1; /* Torna-se visível */
+    }
+}
