@@ -174,11 +174,10 @@ nav .ic:hover {
 .principal,
 .sobre-mim,
 .tecnologias,
-.projetos {
+.projetos,
+.experiencias {
   padding: 6.5% 15%;
   min-height: 35vh;
-
-  
 }
 
 section h1 {
@@ -833,6 +832,95 @@ ul.icons li .icon:before {
   background-color: rgba(101, 24, 180, 1);
 }
 
+/* Experiencias */
+.experiencias {
+  background-color: #0e0e0ef6;
+  position: relative;
+}
+
+.experiencias__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.experiencia__card {
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 900px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experiencia__card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 5px;
+  background: linear-gradient(-45deg, rgb(71, 19, 161), #0f9c02);
+  background-size: 400%;
+  animation: move infinite forwards 4s;
+}
+
+.experiencia__card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(15, 156, 2, 0.5);
+}
+
+.experiencia__header h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.experiencia__header span {
+  color: #0f9b03;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.experiencia__body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experiencia__body ul li {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #c4c4c4;
+  position: relative;
+  padding-left: 25px;
+}
+
+.experiencia__body ul li::before {
+  content: '\f105';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #0f9b03;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 1.1rem;
+}
+
+.experiencia__body strong {
+  color: #fff;
+}
+
 
 /* Ajustar diacordo com a tela */
 @media (max-width: 1325px) {
@@ -850,7 +938,7 @@ ul.icons li .icon:before {
 
   .principal,
   .sobre-mim,
-  .experiencia,
+  .experiencias,
   .projetos,
   .tecnologias {
     padding: 6.5%;
@@ -866,7 +954,7 @@ ul.icons li .icon:before {
 
   .principal,
   .sobre-mim,
-  .experiencia,
+  .experiencias,
   .projetos {
     padding: 30% 0;
     text-align: center;
