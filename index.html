@@ -31,6 +31,9 @@
           <a href="#tecnologias">
             <li>Tecnologias</li>
           </a>
+          <a href="#experiencias">
+            <li>Experiências</li>
+          </a>
           <a href="#projetos">
             <li>Projetos</li>
           </a>
@@ -124,52 +127,50 @@
 
       <div class="features">
         <article class="autoShow">
-          <span class="icon brands fa-java"></span>
+          <span class="icon brands fa-docker"></span>
           <div class="content">
-            <h3>Java</h3>
-            <p>Devido a estudos e projetos anteriores, possuo experiência tanto prática quanto teórica na linguagem
-              Java.</p>
-          </div>
-        </article >
-        <article class="autoShow">
-          <span class="icon brands fa-github"></span>
-          <div class="content">
-            <h3>Git/GitHub</h3>
-            <p>Após a realização de um curso de 30h e algumas praticas com Git/GitHub, tenho certas habilidades na
-              utilização dessa tecnologia.</p>
+            <h3>Infraestrutura & Cloud</h3>
+            <p>Experiência em ambientes Cloud (GCP) com <strong>Docker</strong>, <strong>Nginx</strong> e redes seguras utilizando <strong>Cloudflare Tunnels</strong>.</p>
           </div>
         </article>
+
         <article class="autoShow">
-          <span class="icon brands fa-html5"></span>
+          <span class="icon solid fa-chart-line"></span>
           <div class="content">
-            <h3>Html/Css</h3>
-            <p> HTML a linguagem base para se desenvolver qualquer site e CSS criado com o propósito de estilizar as
-              páginas HTML para deixá-las visualmente mais bonitas e agradáveis sao uns dos meus objetos de estudo e
-              trabalho.</p>
+            <h3>Observabilidade</h3>
+            <p>Implementação de stacks de monitoramento com <strong>Prometheus</strong>, <strong>Grafana</strong> e exportadores de métricas para rastrear performance de aplicações de ponta a ponta.</p>
           </div>
         </article>
-        <article class="autoShow">
-          <span class="icon brands fa-js"></span>
-          <div class="content">
-            <h3>JavaScript</h3>
-            <p> Através de cursos e pratica utilizando JS para implementar itens complexos em páginas web, realizei e
-              possuo uma certa experiência se tratando dessa linguagem.</p>
-          </div>
-        </article>
-        <article class="autoShow">
-          <span class="icon fa-solid fa-c "></span>
-          <div class="content">
-            <h3>Linguagem C</h3>
-            <p>Devido ao desenvolvimento de um jogo durante a faculdade, tenho uma certa experiência tanto prática
-              quanto teórica na linguagem C.</p>
-          </div>
-        </article>
+
         <article class="autoShow">
           <span class="icon brands fa-python"></span>
           <div class="content">
-            <h3>Python</h3>
-            <p> Devido a realizaçao de cursos e atraves de uma experiencia na maratona mineira de programação, tenho
-              conhecimentos a respeito dos conteúdos de python .</p>
+            <h3>Linguagens Back-end</h3>
+            <p>Conhecimentos consolidados em desenvolvimento em <strong>Python</strong>, <strong>Ruby on Rails</strong>, <strong>Java</strong> e <strong>C/C++</strong>.</p>
+          </div>
+        </article>
+
+        <article class="autoShow">
+          <span class="icon brands fa-react"></span>
+          <div class="content">
+            <h3>Desenvolvimento Front-end</h3>
+            <p>Atuação focada no ecossistema moderno com <strong>JavaScript (React)</strong> e estilização ágil via <strong>Tailwind CSS</strong>, garantindo interfaces responsivas.</p>
+          </div>
+        </article>
+
+        <article class="autoShow">
+          <span class="icon solid fa-database"></span>
+          <div class="content">
+            <h3>Dados & GIS</h3>
+            <p>Modelagem relacional com <strong>MySQL</strong> e manipulação de bases georreferenciadas via <strong>PostGIS</strong>, além de integrações com QGIS Server.</p>
+          </div>
+        </article>
+
+        <article class="autoShow">
+          <span class="icon brands fa-github"></span>
+          <div class="content">
+            <h3>Ferramentas & SO</h3>
+            <p>Administração de servidores <strong>Linux</strong> (Ubuntu/Debian). Uso diário de ferramentas como <strong>Git</strong>, <strong>GitHub</strong>, Trello e Notion.</p>
           </div>
         </article>
 
@@ -177,9 +178,31 @@
     </section>
 
 
+    <!-- Experiências -->
+    <section class="experiencias" id="experiencias">
+      <h1 class="autoShow">Experiências</h1>
+      
+      <div class="experiencias__wrapper autoShow">
+        <div class="experiencia__card">
+          <div class="experiencia__header">
+            <h2>DevOps / Desenvolvedor <span>(Estagiário)</span></h2>
+          </div>
+          <div class="experiencia__body">
+            <ul>
+              <li><strong>Arquitetura de Infraestrutura Cloud:</strong> Projetei e implementei uma arquitetura modular de produção baseada em Docker, utilizando Cloudflare Tunnel para conectividade segura (Zero Trust) e NGINX como gateway reverso centralizado.</li>
+              <li><strong>Observabilidade:</strong> Implementei stack de monitoramento com Prometheus, Grafana, cAdvisor e Node Exporter para métricas granulares de infraestrutura e serviços (JMX, PostgreSQL).</li>
+              <li><strong>Padronização e Deploy:</strong> Desenvolvi templates para instâncias GeoNode/Django com âncoras YAML no Docker Compose para garantir consistência e escalabilidade.</li>
+              <li><strong>Automação Web GIS:</strong> Criei solução para publicação autônoma de mapas com QGIS Server e robôs ETL para detecção, conversão e extração dinâmica de dados.</li>
+              <li><strong>Infraestrutura Cloud:</strong> Administração de ambientes em Google Cloud Platform (GCP) e servidores Linux locais, com redes Docker isoladas e foco em segurança.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Projetos -->
-    <section class="projetos " id="projetos">
-      <h1>Projetos</h1>
+    <section class="projetos" id="projetos">
+      <h1 class="autoShow">Projetos</h1>
       <div class="projetos__wrapper">
 
           <!-- CasasContam -->
@@ -324,12 +347,10 @@
         <h1 class="autoShow">Sobre mim</h1>
         <h2 class="autoShow">Timoteo, Minas Gerais</h2>
         <p class="autoShow">
-          Olá! Sou estudante de engenharia de computação, atualmente estudo no CEFET-MG e Busco uma oportunidade para
-          desenvolver, aprender e obter experiência para melhorar meus conhecimentos, com dedicação nos estudos para
-          futuramente me tornar um desenvolvedor fullstack.
+          Graduando em Engenharia de Computação pelo CEFET-MG com experiência em DevOps, Infraestrutura Cloud e Desenvolvimento de Software/Web. Possuo vivência na implantação, manutenção e observabilidade de sistemas utilizando Docker e a stack Prometheus/Grafana, além de experiência prática em Inteligência Artificial com Python e no desenvolvimento de aplicações web utilizando React, Django e Ruby on Rails.
         </p>
         <div class="sobre-mim__descricao-buttons autoShow">
-          <a href="images/Currículo.pdf" download="" target="_blank">
+          <a href="images/MarcioGabriel2026_Curriculo.pdf" download="" target="_blank">
             <div class="sobre-mim__descricao-buttons-curriculo">
               <img src="./images/download-da-nuvem.png" alt="" />
               <p>Currículo</p>
