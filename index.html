@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="author" content="Marcio Gabriel">
   <meta name="keywords" content="portfolio, html, front-end, desenvolvimento, css, javascript">
   <title>Marcio Gabriel</title>
   <link rel="icon" href="./icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/animation.css" />
@@ -48,47 +48,13 @@
   <main>
     <!-- Cabeçalho/home -->
     <section class="principal" id="home">
-      <div class="bubbles">
-        <span style="--i:11;"></span>
-        <span style="--i:12;"></span>
-        <span style="--i:13;"></span>
-        <span style="--i:14;"></span>
-        <span style="--i:15;"></span>
-        <span style="--i:16;"></span>
-        <span style="--i:17;"></span>
-        <span style="--i:18;"></span>
-        <span style="--i:19;"></span>
-        <span style="--i:20;"></span>
-        <span style="--i:21;"></span>
-        <span style="--i:22;"></span>
-        <span style="--i:23;"></span>
-        <span style="--i:24;"></span>
-        <span style="--i:25;"></span>
-        <span style="--i:26;"></span>
-        <span style="--i:27;"></span>
-        <span style="--i:28;"></span>
-        <span style="--i:29;"></span>
-        <span style="--i:30;"></span>
-        <span style="--i:31;"></span>
-        <span style="--i:32;"></span>
-        <span style="--i:33;"></span>
-        <span style="--i:34;"></span>
-        <span style="--i:13;"></span>
-        <span style="--i:14;"></span>
-        <span style="--i:15;"></span>
-        <span style="--i:16;"></span>
-        <span style="--i:17;"></span>
-        <span style="--i:18;"></span>
-        <span style="--i:19;"></span>
-        <span style="--i:20;"></span>
-        <span style="--i:21;"></span>
-        <span style="--i:22;"></span>
-        <span style="--i:23;"></span>
-        <span style="--i:24;"></span>
-        <span style="--i:25;"></span>
-        
-       
-      </div>
+      <!-- FlowField Background -->
+      <canvas id="flowfield-canvas" class="flowfield-canvas" aria-hidden="true"></canvas>
+      
+      <!-- Overlays (Vignette & Fades) -->
+      <div class="flowfield-vignette" aria-hidden="true"></div>
+      <div class="flowfield-fade-top" aria-hidden="true"></div>
+      <div class="flowfield-fade-bottom" aria-hidden="true"></div>
       <div class="principal__left">
         <h1>Olá, eu sou</h1>
         <span class="principal__sentence"></span>
@@ -111,7 +77,9 @@
         </div>
       </div>
       <div class="principal__right">
-        <img src="images/imagem1.png" alt="Imagem Header" data-tilt>
+        <div class="hero-3d-wrapper" id="hero-tilt">
+          <img src="images/imagem1.png" alt="Setup 3D" class="hero-3d-img">
+        </div>
       </div>
 
       <div class="scroll" data-menu="suave"><a href="#sobre">
@@ -125,7 +93,7 @@
 
       <h1 class="autoShow">Tecnologias</h1>
 
-      <div class="features">
+      <div class="features" id="features-spotlight">
         <article class="autoShow">
           <span class="icon brands fa-docker"></span>
           <div class="content">
@@ -335,12 +303,11 @@
     <!-- Sobre mim -->
     <section class="sobre-mim" id="sobre">
       <div class="sobre-mim__foto">
-        <div class="animated-border"> </div>
-        <div class="corner">
-          <div class="content ">
-            <img class="autoShow" src="./images/eu.jpg" alt="Foto minha" />
+        <div class="tilted-card" id="sobre-mim-tilted-card">
+          <img class="autoShow" src="./images/eu.jpg" alt="Foto minha" />
+          <div class="tilted-card-overlay">
+            <p>Marcio Gabriel - Dev</p>
           </div>
-          <div class="teste"></div>
         </div>
       </div>
       <div class="sobre-mim__descricao">
@@ -350,17 +317,14 @@
           Graduando em Engenharia de Computação pelo CEFET-MG com experiência em DevOps, Infraestrutura Cloud e Desenvolvimento de Software/Web. Possuo vivência na implantação, manutenção e observabilidade de sistemas utilizando Docker e a stack Prometheus/Grafana, além de experiência prática em Inteligência Artificial com Python e no desenvolvimento de aplicações web utilizando React, Django e Ruby on Rails.
         </p>
         <div class="sobre-mim__descricao-buttons autoShow">
-          <a href="images/MarcioGabriel2026_Curriculo.pdf" download="" target="_blank">
-            <div class="sobre-mim__descricao-buttons-curriculo">
-              <img src="./images/download-da-nuvem.png" alt="" />
-              <p>Currículo</p>
-            </div>
-          </a>
+          <div class="sobre-mim__descricao-buttons-curriculo" onclick="openResumeModal()">
+            <img src="./images/download-da-nuvem.png" alt="" />
+            <p data-scramble="Currículo">Currículo</p>
+          </div>
           <div class="sobre-mim__descricao-buttons-email" onclick="copiarTexto()">
             <img src="./images/email.png" alt="" />
-            <p>marciogabriel.gs27@gmail.com</p>
+            <p data-scramble="marciogabriel.gs27@gmail.com">marciogabriel.gs27@gmail.com</p>
           </div>
-          </a>
         </div>
 
       </div>
@@ -375,8 +339,20 @@
     </footer>
   </main>
 
+  <!-- Modal de Currículo -->
+  <div id="resumeModal" class="resume-modal" onclick="closeResumeModal(event)">
+    <div class="resume-modal-content">
+      <span class="resume-modal-close" onclick="forceCloseResumeModal()">&times;</span>
+      <iframe src="images/MarcioGabriel2026_Curriculo.pdf" title="Currículo de Marcio Gabriel"></iframe>
+      <div class="resume-modal-actions">
+        <a href="images/MarcioGabriel2026_Curriculo.pdf" download class="resume-download-btn">Baixar PDF</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Scrips -->
   <script src="assets/js/tying.js"></script>
+  <script src="assets/js/flowfield.js"></script>
   <script src="https://kit.fontawesome.com/9bab1c5ab9.js" crossorigin="anonymous"></script>
 </body>
 
