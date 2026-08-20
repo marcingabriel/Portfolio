@@ -1440,3 +1440,136 @@ ul.icons li .icon:before {
     transform: scale(1) translateZ(0);
   }
 }
+
+/*-----------------------------------*\
+  #EXPERIENCIA TIMELINE (Modern)
+\*-----------------------------------*/
+.timeline-container {
+  position: relative;
+  max-width: 1250px;
+  margin: 4rem auto;
+  padding: 2rem 0;
+}
+
+/* Central Line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  position: relative;
+  margin-bottom: 3rem;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 50%;
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+/* Timeline Card */
+.timeline-card {
+  width: 100%;
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.timeline-card:hover {
+  border-color: rgba(15, 156, 2, 0.4);
+  box-shadow: 0 4px 30px rgba(15, 156, 2, 0.1);
+}
+
+/* Glowing Node */
+.timeline-node {
+  position: absolute;
+  top: 3rem;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0f9c02;
+  box-shadow: 0 0 15px #0f9c02, 0 0 30px #0f9c02;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-node {
+  left: -10px;
+  right: auto;
+}
+
+.timeline-date {
+  color: #0f9c02;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.timeline-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.timeline-card h2 span {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.timeline-card h3 {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-card ul {
+  padding-left: 1.2rem;
+  color: #b5b5b5;
+  line-height: 1.6;
+}
+.timeline-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+  
+  .timeline-item, .timeline-item:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    padding-left: 50px;
+    padding-right: 0;
+  }
+
+  .timeline-node, .timeline-item:nth-child(even) .timeline-node {
+    left: 10px;
+    right: auto;
+  }
+}
