@@ -223,8 +223,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // --- Remove Spline Logo ---
 document.addEventListener("DOMContentLoaded", () => {
-    const spline = document.querySelector('spline-viewer');
-    if (spline) {
+    const splines = document.querySelectorAll('spline-viewer');
+    splines.forEach(spline => {
         const removeLogo = setInterval(() => {
             const shadow = spline.shadowRoot;
             if (shadow) {
@@ -237,5 +237,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100);
         // Fallback: stop trying after 5 seconds to prevent infinite loops
         setTimeout(() => clearInterval(removeLogo), 5000);
-    }
+    });
 });

@@ -317,7 +317,8 @@ a {
   position: relative;
   left: 5%;
   /* <-- Empurra a coluna inteira 5% para a direita */
-  z-index: 10;
+  z-index: 30; /* Subindo o Z-index para ficar acima de qualquer overlay */
+  pointer-events: auto;
 }
 
 .hero-3d-wrapper {
@@ -340,6 +341,7 @@ a {
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
+  pointer-events: auto; /* Garante interação com o mouse */
   /* Um pequeno truque de zoom para o modelo 3D "pular" da tela! */
   transform: scale(1.25);
   transform-origin: center right;
@@ -673,6 +675,28 @@ ul.icons li .icon:before {
 .sobre-mim {
   display: flex;
   justify-content: space-around;
+  position: relative;
+}
+
+.sobre-mim-spline {
+  position: absolute;
+  bottom: -40px;
+  right: 20px;
+  width: 400px;
+  height: 400px;
+  z-index: 50; /* Aumentado para ficar acima da .sobre-mim__descricao */
+  pointer-events: auto; /* Garante que reage ao mouse */
+}
+
+@media (max-width: 880px) {
+  .sobre-mim-spline {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: 350px;
+    margin-top: 2rem;
+  }
 }
 
 .sobre-mim__descricao {
