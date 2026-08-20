@@ -11,7 +11,8 @@
   <link rel="icon" href="./icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/animation.css" />
@@ -50,17 +51,19 @@
     <section class="principal" id="home">
       <!-- FlowField Background -->
       <canvas id="flowfield-canvas" class="flowfield-canvas" aria-hidden="true"></canvas>
-      
+
       <!-- Overlays (Vignette & Fades) -->
       <div class="flowfield-vignette" aria-hidden="true"></div>
       <div class="flowfield-fade-top" aria-hidden="true"></div>
       <div class="flowfield-fade-bottom" aria-hidden="true"></div>
       <div class="principal__left">
-        <h1>Olá, eu sou</h1>
-        <span class="principal__sentence"></span>
-        <span class="principal__input-cursor"></span>
-        <h1>Engenheiro Da Computação</h1>
-        <div class="principal__botao">
+        <h1 class="hero-fade-up" style="animation-delay: 0.1s;">Olá, eu sou</h1>
+        <div class="hero-fade-up" style="display: flex; align-items: center; gap: 6px; margin-bottom: 2rem; height: 50px; animation-delay: 0.2s;">
+          <span class="principal__sentence"></span>
+          <span class="principal__input-cursor"></span>
+        </div>
+        <h1 class="hero-fade-up" style="animation-delay: 0.3s;">Engenheiro De Computação</h1>
+        <div class="principal__botao hero-fade-up" style="animation-delay: 0.4s;">
           <a href="https://br.linkedin.com/in/marcio-gabriel-gon%C3%A7alves-soares-133716221?trk=people-guest_people_search-card"
             target="_blank">
             <div class="principal__botao-linkedin">
@@ -70,15 +73,20 @@
           </a>
           <a href="https://github.com/marcingabriel" target="_blank">
             <div class="principal__botao-github">
-              <img class="autoShow" src="./images/github.png" alt="" />
+              <img src="./images/github.png" alt="" />
               <p>Github</p>
             </div>
           </a>
         </div>
       </div>
-      <div class="principal__right">
+      <div class="principal__right hero-scale-in" style="animation-delay: 0.5s;">
         <div class="hero-3d-wrapper" id="hero-tilt">
-          <img src="images/imagem1.png" alt="Setup 3D" class="hero-3d-img">
+          <div class="matrix-container">
+            <img src="images/isometricpc.png" alt="Isometric PC" class="hero-3d-img">
+            <div class="matrix-canvas-wrapper">
+              <canvas id="matrix-canvas"></canvas>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -91,14 +99,15 @@
     <!-- Tecnologias -->
     <section class="tecnologias" id="tecnologias">
 
-      <h1 class="autoShow">Tecnologias</h1>
+      <h1 class="scroll-float-text">Tecnologias</h1>
 
       <div class="features" id="features-spotlight">
         <article class="autoShow">
           <span class="icon brands fa-docker"></span>
           <div class="content">
             <h3>Infraestrutura & Cloud</h3>
-            <p>Experiência em ambientes Cloud (GCP) com <strong>Docker</strong>, <strong>Nginx</strong> e redes seguras utilizando <strong>Cloudflare Tunnels</strong>.</p>
+            <p>Experiência em ambientes Cloud (GCP) com <strong>Docker</strong>, <strong>Nginx</strong> e redes seguras
+              utilizando <strong>Cloudflare Tunnels</strong>.</p>
           </div>
         </article>
 
@@ -106,7 +115,8 @@
           <span class="icon solid fa-chart-line"></span>
           <div class="content">
             <h3>Observabilidade</h3>
-            <p>Implementação de stacks de monitoramento com <strong>Prometheus</strong>, <strong>Grafana</strong> e exportadores de métricas para rastrear performance de aplicações de ponta a ponta.</p>
+            <p>Implementação de stacks de monitoramento com <strong>Prometheus</strong>, <strong>Grafana</strong> e
+              exportadores de métricas para rastrear performance de aplicações de ponta a ponta.</p>
           </div>
         </article>
 
@@ -114,7 +124,9 @@
           <span class="icon brands fa-python"></span>
           <div class="content">
             <h3>Linguagens Back-end</h3>
-            <p>Conhecimentos consolidados em desenvolvimento em <strong>Python</strong>, <strong>Ruby on Rails</strong>, <strong>Java</strong> e <strong>C/C++</strong>.</p>
+            <p>Conhecimentos consolidados em desenvolvimento em <strong>Python</strong>, <strong>Ruby on Rails</strong>,
+              <strong>Java</strong> e <strong>C/C++</strong>.
+            </p>
           </div>
         </article>
 
@@ -122,7 +134,9 @@
           <span class="icon brands fa-react"></span>
           <div class="content">
             <h3>Desenvolvimento Front-end</h3>
-            <p>Atuação focada no ecossistema moderno com <strong>JavaScript (React)</strong> e estilização ágil via <strong>Tailwind CSS</strong>, garantindo interfaces responsivas.</p>
+            <p>Atuação focada no ecossistema moderno com <strong>JavaScript (React)</strong> e estilização ágil via
+              <strong>Tailwind CSS</strong>, garantindo interfaces responsivas.
+            </p>
           </div>
         </article>
 
@@ -130,7 +144,9 @@
           <span class="icon solid fa-database"></span>
           <div class="content">
             <h3>Dados & GIS</h3>
-            <p>Modelagem relacional com <strong>MySQL</strong> e manipulação de bases georreferenciadas via <strong>PostGIS</strong>, além de integrações com QGIS Server.</p>
+            <p>Modelagem relacional com <strong>MySQL</strong> e manipulação de bases georreferenciadas via
+              <strong>PostGIS</strong>, além de integrações com QGIS Server.
+            </p>
           </div>
         </article>
 
@@ -138,18 +154,52 @@
           <span class="icon brands fa-github"></span>
           <div class="content">
             <h3>Ferramentas & SO</h3>
-            <p>Administração de servidores <strong>Linux</strong> (Ubuntu/Debian). Uso diário de ferramentas como <strong>Git</strong>, <strong>GitHub</strong>, Trello e Notion.</p>
+            <p>Administração de servidores <strong>Linux</strong> (Ubuntu/Debian). Uso diário de ferramentas como
+              <strong>Git</strong>, <strong>GitHub</strong>, Trello e Notion.
+            </p>
           </div>
         </article>
 
+      </div>
+
+      <!-- Logo Loop -->
+      <div class="logo-loop-container autoShow">
+        <div class="logo-loop-track">
+          <div class="logo-loop-items">
+            <i class="fa-brands fa-react" title="React"></i>
+            <i class="fa-brands fa-js" title="JavaScript"></i>
+            <i class="fa-brands fa-python" title="Python"></i>
+            <i class="fa-brands fa-docker" title="Docker"></i>
+            <i class="fa-brands fa-linux" title="Linux"></i>
+            <i class="fa-brands fa-java" title="Java"></i>
+            <i class="fa-brands fa-html5" title="HTML5"></i>
+            <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+            <i class="fa-brands fa-git-alt" title="Git"></i>
+            <i class="fa-brands fa-github" title="GitHub"></i>
+            <i class="fa-solid fa-database" title="SQL / PostGIS"></i>
+          </div>
+          <div class="logo-loop-items" aria-hidden="true">
+            <i class="fa-brands fa-react" title="React"></i>
+            <i class="fa-brands fa-js" title="JavaScript"></i>
+            <i class="fa-brands fa-python" title="Python"></i>
+            <i class="fa-brands fa-docker" title="Docker"></i>
+            <i class="fa-brands fa-linux" title="Linux"></i>
+            <i class="fa-brands fa-java" title="Java"></i>
+            <i class="fa-brands fa-html5" title="HTML5"></i>
+            <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+            <i class="fa-brands fa-git-alt" title="Git"></i>
+            <i class="fa-brands fa-github" title="GitHub"></i>
+            <i class="fa-solid fa-database" title="SQL / PostGIS"></i>
+          </div>
+        </div>
       </div>
     </section>
 
 
     <!-- Experiências -->
     <section class="experiencias" id="experiencias">
-      <h1 class="autoShow">Experiências</h1>
-      
+      <h1 class="scroll-float-text">Experiências</h1>
+
       <div class="experiencias__wrapper autoShow">
         <div class="experiencia__card">
           <div class="experiencia__header">
@@ -157,11 +207,17 @@
           </div>
           <div class="experiencia__body">
             <ul>
-              <li><strong>Arquitetura de Infraestrutura Cloud:</strong> Projetei e implementei uma arquitetura modular de produção baseada em Docker, utilizando Cloudflare Tunnel para conectividade segura (Zero Trust) e NGINX como gateway reverso centralizado.</li>
-              <li><strong>Observabilidade:</strong> Implementei stack de monitoramento com Prometheus, Grafana, cAdvisor e Node Exporter para métricas granulares de infraestrutura e serviços (JMX, PostgreSQL).</li>
-              <li><strong>Padronização e Deploy:</strong> Desenvolvi templates para instâncias GeoNode/Django com âncoras YAML no Docker Compose para garantir consistência e escalabilidade.</li>
-              <li><strong>Automação Web GIS:</strong> Criei solução para publicação autônoma de mapas com QGIS Server e robôs ETL para detecção, conversão e extração dinâmica de dados.</li>
-              <li><strong>Infraestrutura Cloud:</strong> Administração de ambientes em Google Cloud Platform (GCP) e servidores Linux locais, com redes Docker isoladas e foco em segurança.</li>
+              <li><strong>Arquitetura de Infraestrutura Cloud:</strong> Projetei e implementei uma arquitetura modular
+                de produção baseada em Docker, utilizando Cloudflare Tunnel para conectividade segura (Zero Trust) e
+                NGINX como gateway reverso centralizado.</li>
+              <li><strong>Observabilidade:</strong> Implementei stack de monitoramento com Prometheus, Grafana, cAdvisor
+                e Node Exporter para métricas granulares de infraestrutura e serviços (JMX, PostgreSQL).</li>
+              <li><strong>Padronização e Deploy:</strong> Desenvolvi templates para instâncias GeoNode/Django com
+                âncoras YAML no Docker Compose para garantir consistência e escalabilidade.</li>
+              <li><strong>Automação Web GIS:</strong> Criei solução para publicação autônoma de mapas com QGIS Server e
+                robôs ETL para detecção, conversão e extração dinâmica de dados.</li>
+              <li><strong>Infraestrutura Cloud:</strong> Administração de ambientes em Google Cloud Platform (GCP) e
+                servidores Linux locais, com redes Docker isoladas e foco em segurança.</li>
             </ul>
           </div>
         </div>
@@ -170,64 +226,80 @@
 
     <!-- Projetos -->
     <section class="projetos" id="projetos">
-      <h1 class="autoShow">Projetos</h1>
+      <h1 class="scroll-float-text">Projetos</h1>
       <div class="projetos__wrapper">
 
-          <!-- CasasContam -->
-          <section class="projetos__card autoShow">
-            <a href="https://casas-contam-historia.vercel.app/" target="_blank">
-              <div class="card-img"> 
-                <img src="./images/casascontam.png" alt="" class="projeto-img" />
-              </div>
-             
-            </a>
-            <h2>Projeto "Casas Contam Historia" </h2>
-            <p>
-              Desenvolvimento de um site interativo para catalogar residências históricas de Timóteo, MG, 
-              com foco em educação patrimonial. Utilizou tecnologias como React, Vite e TailwindCSS para criar um 
-              design responsivo e acessível, incluindo tradução em Libras, textos com áudio e modo de alto contraste. 
-              O projeto foi apresentado na 1ª Semana de Arquitetura e Urbanismo (SEMAU) e obteve feedback positivo pela integração de recursos inclusivos e educativos.
-            </p>
-            <span>Tecnologias usadas no projeto: Html, CSS, JS, TailwindCSS, ReactJS + Vite.</span>
-            <a href="https://casas-contam-historia.vercel.app/" target="_blank">
-              <div class="projetos__card-button">
-                <img src="./images/link.png" alt="Botao visualizar projeto">
-                Visualizar
-              </div>
-            </a>
-          </section>
+        <!-- CasasContam -->
+        <section class="projetos__card autoShow">
+          <a href="https://casas-contam-historia.vercel.app/" target="_blank">
+            <div class="card-img">
+              <img src="./images/casascontam.png" alt="" class="projeto-img" />
+            </div>
 
-          <!-- Estacionamento -->
-          <section class="projetos__card autoShow">
-            <a href="" target="_blank">
-              <div class="card-img"> 
-                <img src="./images/maquete.jpg" alt="" class="projeto-img" />
-              </div>
-             
-            </a>
-            <h2>Protótipo de Sistema Embarcado para Estacionamentos  </h2>
-            <p>
-              Projeto interdisciplinar desenvolvido entre os cursos de Arquitetura e Urbanismo e Engenharia de Computação do CEFET-MG. 
-              Consistiu na construção de uma maquete de estacionamento e na implementação de um protótipo de sistema embarcado para contabilizar e exibir vagas disponíveis em tempo real. 
-              Apresentado na META (Mostra Específica de Trabalhos e Aplicações), conquistou o terceiro lugar na competição.
-            </p>
-            <span>Tecnologias usadas no projeto: Sistemas embarcados (microcontroladores), Impressão 3D.  </span>
-  
-          </section>
+          </a>
+          <h2>Projeto "Casas Contam Historia" </h2>
+          <p>
+            Desenvolvimento de um site interativo para catalogar residências históricas de Timóteo, MG,
+            com foco em educação patrimonial. Utilizou tecnologias como React, Vite e TailwindCSS para criar um
+            design responsivo e acessível, incluindo tradução em Libras, textos com áudio e modo de alto contraste.
+            O projeto foi apresentado na 1ª Semana de Arquitetura e Urbanismo (SEMAU) e obteve feedback positivo pela
+            integração de recursos inclusivos e educativos.
+          </p>
+          <div class="projetos__tags">
+            <span class="shimmer-text">HTML</span>
+            <span class="shimmer-text">CSS</span>
+            <span class="shimmer-text">JS</span>
+            <span class="shimmer-text">TailwindCSS</span>
+            <span class="shimmer-text">ReactJS + Vite</span>
+          </div>
+          <a href="https://casas-contam-historia.vercel.app/" target="_blank">
+            <div class="projetos__card-button">
+              <img src="./images/link.png" alt="Botao visualizar projeto">
+              Visualizar
+            </div>
+          </a>
+        </section>
+
+        <!-- Estacionamento -->
+        <section class="projetos__card autoShow">
+          <a href="" target="_blank">
+            <div class="card-img">
+              <img src="./images/maquete.jpg" alt="" class="projeto-img" />
+            </div>
+
+          </a>
+          <h2>Protótipo de Sistema Embarcado para Estacionamentos </h2>
+          <p>
+            Projeto interdisciplinar desenvolvido entre os cursos de Arquitetura e Urbanismo e Engenharia de Computação
+            do CEFET-MG.
+            Consistiu na construção de uma maquete de estacionamento e na implementação de um protótipo de sistema
+            embarcado para contabilizar e exibir vagas disponíveis em tempo real.
+            Apresentado na META (Mostra Específica de Trabalhos e Aplicações), conquistou o terceiro lugar na
+            competição.
+          </p>
+          <div class="projetos__tags">
+            <span class="shimmer-text">Sistemas embarcados</span>
+            <span class="shimmer-text">Impressão 3D</span>
+          </div>
+
+        </section>
         <!-- Frogguer -->
         <section class="projetos__card autoShow">
           <a href="https://github.com/marcingabriel/FroggerGame" target="_blank">
-            <div class="card-img"> 
+            <div class="card-img">
               <img src="./images/projeto2.png" alt="" class="projeto-img" />
             </div>
-           
+
           </a>
           <h2>Frogguer Game </h2>
           <p>
             Projeto desenvolvido a partir do curso de Eng. de Computação no CEFET-MG, durante a materia Conceitos da
             Linguagem C para por em prática meus estudos iniciais sobre essa linguagem.
           </p>
-          <span>Tecnologias usadas no projeto: Linguagem C, biblioteca Allegro.</span>
+          <div class="projetos__tags">
+            <span class="shimmer-text">Linguagem C</span>
+            <span class="shimmer-text">Allegro</span>
+          </div>
           <a href="https://github.com/marcingabriel/FroggerGame" target="_blank">
             <div class="projetos__card-button">
               <img src="./images/link.png" alt="Botao visualizar projeto">
@@ -238,8 +310,8 @@
         <!-- Android -->
         <section class="projetos__card autoShow">
           <a href="https://marcingabriel.github.io/projeto_site/android.html" target="_blank">
-            <div class="card-img"> 
-            <img src="./images/projeto1.png" alt="Botao visualizar projeto" class="projeto-img" />
+            <div class="card-img">
+              <img src="./images/projeto1.png" alt="Botao visualizar projeto" class="projeto-img" />
             </div>
           </a>
           <h2>Site Android</h2>
@@ -247,7 +319,10 @@
             Meu primeiro projeto me aventurando na área do Front-end, esse elaborado durante meus estudos em HTML e CSS
             em 2022.
           </p>
-          <span>Tecnologias usadas no projeto: HTML e CSS.</span>
+          <div class="projetos__tags">
+            <span class="shimmer-text">HTML</span>
+            <span class="shimmer-text">CSS</span>
+          </div>
           <a href="https://marcingabriel.github.io/projeto_site/android.html" target="_blank">
             <div class="projetos__card-button">
               <img src="./images/link.png" alt="">
@@ -257,15 +332,18 @@
         </section>
         <section class="projetos__card autoShow">
           <a href="https://marcingabriel.github.io/projeto-social/" target="_blank">
-            <div class="card-img"> 
-            <img src="./images/projeto3.jpg" alt="" class="projeto-img" />
+            <div class="card-img">
+              <img src="./images/projeto3.jpg" alt="" class="projeto-img" />
             </div>
           </a>
           <h2>Site com redes sociais</h2>
           <p>
             Projeto realizado durante curso de HTML e CSS, utilizando da tecnologia de iframes.
           </p>
-          <span>Tecnologias usadas no projeto: HTML, CSS.</span>
+          <div class="projetos__tags">
+            <span class="shimmer-text">HTML</span>
+            <span class="shimmer-text">CSS</span>
+          </div>
           <a href="https://marcingabriel.github.io/projeto-social/" target="_blank">
             <div class="projetos__card-button">
               <img src="./images/link.png" alt="Botao visualizar projeto">
@@ -277,13 +355,14 @@
           <!-- Outros Projetos -->
           <section class="projetos__card">
             <a href="https://github.com/marcingabriel?tab=repositories" target="_blank">
-              <div class="card-img"> 
-              <img src="./images/githubprojects.jpg " alt="" class="projeto-img " />
+              <div class="card-img">
+                <img src="./images/githubprojects.jpg " alt="" class="projeto-img " />
               </div>
             </a>
             <h2>Outros projetos </h2>
             <p>
-              Repositorio com outros projeto desenvolvidos a partir do curso de Eng. de Computação no CEFET-MG e cursos onlines colocando em prática meus estudos.
+              Repositorio com outros projeto desenvolvidos a partir do curso de Eng. de Computação no CEFET-MG e cursos
+              onlines colocando em prática meus estudos.
             </p>
             <a href="https://github.com/marcingabriel?tab=repositories" target="_blank">
               <div class="projetos__card-button">
@@ -304,17 +383,20 @@
     <section class="sobre-mim" id="sobre">
       <div class="sobre-mim__foto">
         <div class="tilted-card" id="sobre-mim-tilted-card">
-          <img class="autoShow" src="./images/eu.jpg" alt="Foto minha" />
+          <img class="autoShow" src="./images/eu.png" alt="Foto minha" />
           <div class="tilted-card-overlay">
             <p>Marcio Gabriel - Dev</p>
           </div>
         </div>
       </div>
       <div class="sobre-mim__descricao">
-        <h1 class="autoShow">Sobre mim</h1>
+        <h1 class="scroll-float-text">Sobre mim</h1>
         <h2 class="autoShow">Timoteo, Minas Gerais</h2>
         <p class="autoShow">
-          Graduando em Engenharia de Computação pelo CEFET-MG com experiência em DevOps, Infraestrutura Cloud e Desenvolvimento de Software/Web. Possuo vivência na implantação, manutenção e observabilidade de sistemas utilizando Docker e a stack Prometheus/Grafana, além de experiência prática em Inteligência Artificial com Python e no desenvolvimento de aplicações web utilizando React, Django e Ruby on Rails.
+          Graduando em Engenharia de Computação pelo CEFET-MG com experiência em DevOps, Infraestrutura Cloud e
+          Desenvolvimento de Software/Web. Possuo vivência na implantação, manutenção e observabilidade de sistemas
+          utilizando Docker e a stack Prometheus/Grafana, além de experiência prática em Inteligência Artificial com
+          Python e no desenvolvimento de aplicações web utilizando React, Django e Ruby on Rails.
         </p>
         <div class="sobre-mim__descricao-buttons autoShow">
           <div class="sobre-mim__descricao-buttons-curriculo" onclick="openResumeModal()">
@@ -330,12 +412,39 @@
       </div>
     </section>
 
-    <!-- Rodape -->
-    <footer>
-      <p>Desenvolvido por</p><a
-        href="https://br.linkedin.com/in/marcio-gabriel-gon%C3%A7alves-soares-133716221?trk=people-guest_people_search-card"
-        target="_blank"><span> Marcio
-          Gabriel</span></a>
+    <!-- Rodape com Efeito WebThreads -->
+    <footer style="position: relative; overflow: hidden; background-color: #050505;">
+      <!-- Background Effect Container -->
+      <canvas class="flowfield-canvas" aria-hidden="true"
+        style="position: absolute; inset: 0; z-index: 0; pointer-events: none;"></canvas>
+      <div class="flowfield-vignette" aria-hidden="true" style="position: absolute; inset: 0; z-index: 1;"></div>
+
+      <!-- Footer Content -->
+      <div class="footer-content"
+        style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 50px; padding: 3rem 0 1.5rem 0;">
+
+        <!-- Social Icons -->
+        <div class="footer-icons"
+          style="display: flex; gap: 1.5rem; font-size: 2.2rem; filter: drop-shadow(0 0 10px rgba(15,156,2,0.3)); margin-bottom: auto;">
+          <a href="https://github.com/marcingabriel" target="_blank" style="color: #fff; transition: 0.3s;"
+            onmouseover="this.style.color='#0f9c02'" onmouseout="this.style.color='#fff'"><i
+              class="fab fa-github"></i></a>
+          <a href="https://br.linkedin.com/in/marcio-gabriel-gon%C3%A7alves-soares-133716221" target="_blank"
+            style="color: #fff; transition: 0.3s;" onmouseover="this.style.color='#0f9c02'"
+            onmouseout="this.style.color='#fff'"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:marciogabriel.gs27@gmail.com" style="color: #fff; transition: 0.3s;"
+            onmouseover="this.style.color='#0f9c02'" onmouseout="this.style.color='#fff'"><i
+              class="fas fa-envelope"></i></a>
+        </div>
+
+        <!-- Info -->
+        <div class="footer-info" style="text-align: center; color: #b5b5b5; letter-spacing: 1px; margin-top: 2rem;">
+          <p style="font-size: 1rem; margin: 0;">Desenvolvido por <a
+              href="https://br.linkedin.com/in/marcio-gabriel-gon%C3%A7alves-soares-133716221" target="_blank"
+              style="color: #0f9c02; font-weight: bold; text-decoration: none;">Marcio Gabriel</a></p>
+          <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.5;">© 2026 Todos os direitos reservados.</p>
+        </div>
+      </div>
     </footer>
   </main>
 
@@ -343,7 +452,7 @@
   <div id="resumeModal" class="resume-modal" onclick="closeResumeModal(event)">
     <div class="resume-modal-content">
       <span class="resume-modal-close" onclick="forceCloseResumeModal()">&times;</span>
-      <iframe src="images/MarcioGabriel2026_Curriculo.pdf" title="Currículo de Marcio Gabriel"></iframe>
+      <iframe src="images/MarcioGabriel2026_Curriculo.pdf#view=FitH" title="Currículo de Marcio Gabriel"></iframe>
       <div class="resume-modal-actions">
         <a href="images/MarcioGabriel2026_Curriculo.pdf" download class="resume-download-btn">Baixar PDF</a>
       </div>
@@ -353,6 +462,8 @@
   <!-- Scrips -->
   <script src="assets/js/tying.js"></script>
   <script src="assets/js/flowfield.js"></script>
+  <script src="assets/js/magic-bento.js"></script>
+  <script src="assets/js/web-threads.bundle.js"></script>
   <script src="https://kit.fontawesome.com/9bab1c5ab9.js" crossorigin="anonymous"></script>
 </body>
 

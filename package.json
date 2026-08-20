@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@splinetool/react-spline": "^4.1.0",
+    "ogl": "^1.0.11"
+  }
+}
