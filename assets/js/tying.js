@@ -221,119 +221,21 @@ document.addEventListener("DOMContentLoaded", function() {
     floatTitles.forEach(el => floatObserver.observe(el));
 });
 
-// --- Matrix Canvas Animation ---
-document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.getElementById('matrix-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-        canvas.width = canvas.parentElement.offsetWidth;
-        canvas.height = canvas.parentElement.offsetHeight;
-    }
-    resizeCanvas();
-    
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
-    const charArray = chars.split('');
-    const fontSize = 14;
-    let columns = canvas.width / fontSize;
-    let drops = [];
-    
-    function initDrops() {
-        columns = Math.floor(canvas.width / fontSize);
-        drops = [];
-        for (let x = 0; x < columns; x++) {
-            drops[x] = {
-                y: Math.floor(Math.random() * -50), // Start above screen at random heights
-                trail: [] 
-            };
-            // Pre-fill random characters for the trail
-            for(let i=0; i<15; i++) {
-                drops[x].trail.push(charArray[Math.floor(Math.random() * charArray.length)]);
-            }
-        }
-    }
-    initDrops();
-    
-    let scrollSpeedMultiplier = 1;
-    let targetSpeedMultiplier = 1;
-    let lastScrollY = window.scrollY;
-
-    // Scroll listener for acceleration
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        const delta = Math.abs(currentScrollY - lastScrollY);
-        // The faster we scroll, the higher the target multiplier
-        targetSpeedMultiplier = 1 + Math.min(delta * 0.3, 15); // Cap multiplier at 15
-        lastScrollY = currentScrollY;
-    });
-
-    // Throttle the draw rate slightly to make the rain readable, 
-    // unless we are scrolling fast.
-    let lastDrawTime = 0;
-
-    function draw(timestamp) {
-        requestAnimationFrame(draw);
-
-        // Lerp speed multiplier back to 1 smoothly
-        scrollSpeedMultiplier += (targetSpeedMultiplier - scrollSpeedMultiplier) * 0.1;
-        targetSpeedMultiplier += (1 - targetSpeedMultiplier) * 0.05;
-
-        // Base FPS for matrix is ~30fps (33ms). 
-        // When scrolling fast (multiplier > 1), we draw faster.
-        const throttleMs = Math.max(16, 33 / scrollSpeedMultiplier);
-        
-        if (timestamp - lastDrawTime < throttleMs) {
-            return;
-        }
-        lastDrawTime = timestamp;
-
-        // Clear the canvas completely (no black background!)
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.font = fontSize + 'px monospace';
-        
-        for (let i = 0; i < drops.length; i++) {
-            const drop = drops[i];
-            
-            // Push new random character to the head of the trail
-            drop.trail.push(charArray[Math.floor(Math.random() * charArray.length)]);
-            if (drop.trail.length > 20) { // Trail length limit
-                drop.trail.shift();
-            }
-            
-            // Draw the trail
-            for (let j = 0; j < drop.trail.length; j++) {
-                const char = drop.trail[j];
-                const yPos = (drop.y - (drop.trail.length - 1 - j)) * fontSize;
-                
-                // Head is white/bright green, tail fades out
-                if (j === drop.trail.length - 1) {
-                    ctx.fillStyle = `rgba(200, 255, 200, 1)`; 
-                } else {
-                    const opacity = (j + 1) / drop.trail.length;
-                    ctx.fillStyle = `rgba(0, 255, 0, ${opacity})`;
+// --- Remove Spline Logo ---
+document.addEventListener("DOMContentLoaded", () => {
+    const spline = document.querySelector('spline-viewer');
+    if (spline) {
+        const removeLogo = setInterval(() => {
+            const shadow = spline.shadowRoot;
+            if (shadow) {
+                const logo = shadow.querySelector('#logo');
+                if (logo) {
+                    logo.remove();
+                    clearInterval(removeLogo);
                 }
-                
-                ctx.fillText(char, i * fontSize, yPos);
             }
-            
-            // Reset drop if it goes past the bottom
-            if (drop.y * fontSize > canvas.height + 200 && Math.random() > 0.95) {
-                drop.y = 0;
-            }
-            
-            // Move drop down
-            drop.y++;
-        }
+        }, 100);
+        // Fallback: stop trying after 5 seconds to prevent infinite loops
+        setTimeout(() => clearInterval(removeLogo), 5000);
     }
-    
-    // Handle resize
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-        initDrops();
-    });
-
-    requestAnimationFrame(draw);
 });

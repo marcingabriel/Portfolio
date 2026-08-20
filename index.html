@@ -58,7 +58,8 @@
       <div class="flowfield-fade-bottom" aria-hidden="true"></div>
       <div class="principal__left">
         <h1 class="hero-fade-up" style="animation-delay: 0.1s;">Olá, eu sou</h1>
-        <div class="hero-fade-up" style="display: flex; align-items: center; gap: 6px; margin-bottom: 2rem; height: 50px; animation-delay: 0.2s;">
+        <div class="hero-fade-up"
+          style="display: flex; align-items: center; gap: 6px; margin-bottom: 2rem; height: 50px; animation-delay: 0.2s;">
           <span class="principal__sentence"></span>
           <span class="principal__input-cursor"></span>
         </div>
@@ -80,13 +81,9 @@
         </div>
       </div>
       <div class="principal__right hero-scale-in" style="animation-delay: 0.5s;">
-        <div class="hero-3d-wrapper" id="hero-tilt">
-          <div class="matrix-container">
-            <img src="images/isometricpc.png" alt="Isometric PC" class="hero-3d-img">
-            <div class="matrix-canvas-wrapper">
-              <canvas id="matrix-canvas"></canvas>
-            </div>
-          </div>
+        <div class="hero-3d-wrapper" id="hero-spline">
+          <!--  <spline-viewer url="https://prod.spline.design/erf5vJkmzj8AYE29/scene.splinecode?v=2"></spline-viewer> -->
+          <spline-viewer url="https://prod.spline.design/erf5vJkmzj8AYE29/scene.splinecode"></spline-viewer>
         </div>
       </div>
 
@@ -464,7 +461,9 @@
   <script src="assets/js/flowfield.js"></script>
   <script src="assets/js/magic-bento.js"></script>
   <script src="assets/js/web-threads.bundle.js"></script>
-  <script src="https://kit.fontawesome.com/9bab1c5ab9.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6cc6e36814.js" crossorigin="anonymous"></script>
+  <!-- Spline 3D Viewer -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </body>
 
 </html>
