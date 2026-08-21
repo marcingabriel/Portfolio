@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trailAlpha: 0.06,
     };
     
-    const count = 500; // Sparsity to make it lighter
+    const count = 350; // Reduced for performance, originally 500
     const dpr = window.devicePixelRatio || 1;
 
     let width = 0;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return {
         x: Math.random() * width,
         y: Math.random() * height,
-        speed: 1.1 + Math.random() * 1.8,
+        speed: 1.5 + Math.random() * 2.2,
         hue: cfg.hueStart + Math.random() * cfg.hueRange,
         life: Math.floor(Math.random() * maxLife),
         maxLife,
@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const hueMod = (p.hue + (angle / (Math.PI * 2)) * 70 + 360) % 360;
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.3, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${hueMod}, ${cfg.saturation}%, ${cfg.lightness}%, ${alpha})`;
+        ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${hueMod}, ${cfg.saturation}%, ${cfg.lightness}%, ${alpha * 1.2})`;
         ctx.fill();
       }
 

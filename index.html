@@ -15,6 +15,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/border-glow.css" />
   <link rel="stylesheet" href="assets/css/animation.css" />
 
 
@@ -26,22 +27,11 @@
       <p><a href="#home">&lsaquo;MS/&rsaquo;</a></p>
       <button data-menu="button" aria-controls="menu"></button>
       <ul data-menu="list" id="menu">
-        <a href="#home">
-          <li>Home</li>
-
-          <a href="#tecnologias">
-            <li>Tecnologias</li>
-          </a>
-          <a href="#experiencias">
-            <li>Experiências</li>
-          </a>
-          <a href="#projetos">
-            <li>Projetos</li>
-          </a>
-        </a>
-        <a href="#sobre">
-          <li>Sobre</li>
-        </a>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#experiencias">Experiências</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
       </ul>
     </nav>
   </header>
@@ -195,58 +185,92 @@
 
 
     <!-- Experiências -->
-    <section class="experiencias" id="experiencias">
-      <h1 class="scroll-float-text">Experiências</h1>
+    <section class="experiencias" id="experiencias" style="position: relative; overflow: hidden;">
+      <div id="experiencias-particles"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
 
-      <div class="timeline-container">
-        
-        <!-- 1st Card (Right Side -> Animates from left to right) -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-card animated-content" data-direction="horizontal" data-distance="100" data-reverse="true" data-duration="1.2">
-            <span class="timeline-date">2026 - Presente</span>
-            <h2>Engenharia de Software e DevOps <span>(Estagiário)</span></h2>
-            <h3>iPlanus - Timóteo, MG</h3>
-            <ul>
-              <li><strong>Arquitetura de Infraestrutura Cloud:</strong> Projetei e implementei uma arquitetura modular de produção baseada em Docker, utilizando Cloudflare Tunnel para conectividade segura (Zero Trust) e NGINX como gateway reverso centralizado.</li>
-              <li><strong>Observabilidade:</strong> Implementei stack de monitoramento com Prometheus, Grafana, cAdvisor e Node Exporter para métricas granulares de infraestrutura e serviços (JMX, PostgreSQL).</li>
-              <li><strong>Padronização e Deploy:</strong> Desenvolvi templates para instâncias GeoNode/Django com âncoras YAML no Docker Compose para garantir consistência e escalabilidade.</li>
-              <li><strong>Automação Web GIS:</strong> Criei solução para publicação autônoma de mapas com QGIS Server e robôs ETL para detecção, conversão e extração dinâmica de dados.</li>
-              <li><strong>Infraestrutura Cloud:</strong> Administração de ambientes em Google Cloud Platform (GCP) e servidores Linux locais, com redes Docker isoladas e foco em segurança.</li>
-            </ul>
+      <div style="position: relative; z-index: 1;">
+        <h1 class="scroll-float-text">Experiências</h1>
+
+        <div class="timeline-container">
+
+          <!-- 1st Card (Right Side -> Animates from left to right) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card border-glow-card animated-content" data-direction="horizontal" data-distance="100"
+              data-reverse="true" data-duration="1.2">
+              <span class="edge-light"></span>
+              <div class="border-glow-inner">
+                <span class="timeline-date">2026 - Presente</span>
+                <h2>Engenharia de Software e DevOps </h2>
+                <h3>iPlanus</h3>
+                <ul>
+                  <li><strong>Arquitetura de Infraestrutura Cloud:</strong> Projetei e implementei uma arquitetura
+                    modular
+                    de produção baseada em Docker, utilizando Cloudflare Tunnel para conectividade segura (Zero Trust) e
+                    NGINX como gateway reverso centralizado.</li>
+                  <li><strong>Observabilidade:</strong> Implementei stack de monitoramento com Prometheus, Grafana,
+                    cAdvisor
+                    e Node Exporter para métricas granulares de infraestrutura e serviços (JMX, PostgreSQL).</li>
+                  <li><strong>Padronização e Deploy:</strong> Desenvolvi templates para instâncias GeoNode/Django com
+                    âncoras YAML no Docker Compose para garantir consistência e escalabilidade.</li>
+                  <li><strong>Automação Web GIS:</strong> Criei solução para publicação autônoma de mapas com QGIS
+                    Server e
+                    robôs ETL para detecção, conversão e extração dinâmica de dados.</li>
+                  <li><strong>Infraestrutura Cloud:</strong> Administração de ambientes em Google Cloud Platform (GCP) e
+                    servidores Linux locais, com redes Docker isoladas e foco em segurança.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- 2nd Card (Left Side -> Animates from right to left) -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-card animated-content" data-direction="horizontal" data-distance="100" data-duration="1.2">
-            <span class="timeline-date">2024 - 2025</span>
-            <h2>Desenvolvedor Front-end <span>(Júnior)</span></h2>
-            <h3>Empresa Exemplo - Local</h3>
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-              <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
-            </ul>
+          <!-- 2nd Card (Left Side -> Animates from right to left) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card border-glow-card animated-content" data-direction="horizontal" data-distance="100"
+              data-duration="1.2">
+              <span class="edge-light"></span>
+              <div class="border-glow-inner">
+                <span class="timeline-date">2024 - 2025</span>
+                <h2>Desenvolvedor Bolsista <span>(PET)</span></h2>
+                <h3>CEFET-MG</h3>
+                <ul>
+                  <li><strong>Inteligência Artificial:</strong> Atuação em equipe voltada para o desenvolvimento de
+                    soluções
+                    utilizando Python aplicadas à área de IA.</li>
+                  <li><strong>Desenvolvimento Web Full-Stack:</strong> Responsável pela criação e manutenção de um site
+                    voltado para o setor de arquitetura e educação patrimonial, utilizando HTML, CSS, JavaScript, React
+                    e
+                    Tailwind.</li>
+                  <li><strong>Sistemas Embarcados (Projeto Premiado):</strong> Desenvolvi em equipe um protótipo de
+                    sistema
+                    embarcado para gestão de vagas em tempo real, integrando hardware e software para uma simulação de
+                    análise urbana.</li>
+                  <li><strong>Integração Acadêmica:</strong> Participação em atividades extracurriculares orientadas que
+                    visam complementar a formação por meio da tríade ensino, pesquisa e extensão.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- 3rd Card (Right Side -> Animates from left to right) -->
-        <div class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-card animated-content" data-direction="horizontal" data-distance="100" data-reverse="true" data-duration="1.2">
-            <span class="timeline-date">2022 - 2023</span>
-            <h2>Suporte Técnico <span>(Estagiário)</span></h2>
-            <h3>Outra Empresa - Local</h3>
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-              <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
-            </ul>
+          <!-- 3rd Card (Right Side -> Animates from left to right) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card border-glow-card animated-content" data-direction="horizontal" data-distance="100"
+              data-reverse="true" data-duration="1.2">
+              <span class="edge-light"></span>
+              <div class="border-glow-inner">
+                <span class="timeline-date">2018 - 2019</span>
+                <h2>Auxiliar de TI e Manutenção</h2>
+                <h3>SOS - Informática</h3>
+                <ul>
+                  <li>Suporte técnico e manutenção preventiva/corretiva de hardware e redes.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -255,8 +279,74 @@
       <h1 class="scroll-float-text">Projetos</h1>
       <div class="projetos__wrapper">
 
+
+        <!-- iDataSpace -->
+        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
+          <a href="https://app.idataspace.tec.br/" target="_blank">
+            <div class="card-img">
+              <img src="./images/idataspace.png" alt="" class="projeto-img" />
+            </div>
+
+          </a>
+          <h2>iDataSpace </h2>
+          <p>
+            Uma plataforma corporativa de Infraestrutura de Dados Espaciais (IDE) projetada para a gestão,
+            governança e catalogação de ativos geográficos. O sistema atua como o motor central de dados, permitindo a
+            ingestão segura de arquivos espaciais (Shapefiles), controle de acesso rigoroso baseado em papéis (RBAC)
+            Multi-tenant e
+            orquestração de serviços de mapas.
+          </p>
+          <div class="projetos__tags">
+            <span class="shimmer-text">Python</span>
+            <span class="shimmer-text">FastAPI</span>
+            <span class="shimmer-text">Pydantic</span>
+            <span class="shimmer-text">PostgreSQL + PostGIS</span>
+            <span class="shimmer-text">React + Vite</span>
+            <span class="shimmer-text">Docker</span>
+            <span class="shimmer-text">Nginx</span>
+          </div>
+          <a href="https://app.idataspace.tec.br/" target="_blank">
+            <div class="projetos__card-button">
+              <img src="./images/link.png" alt="Botao visualizar projeto">
+              Visualizar
+            </div>
+          </a>
+        </section>
+
+        <!-- GeoViewer -->
+        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
+          <a href="https://app.idataspace.tec.br/geoviewer" target="_blank">
+            <div class="card-img">
+              <img src="./images/geoviewer.png" alt="" class="projeto-img" />
+            </div>
+
+          </a>
+          <h2> GeoViewer </h2>
+          <p>
+            Uma aplicação WebGIS de alta performance focada na visualização e análise de dados espaciais.
+            Funciona como o braço visual do iDataSpace, permitindo que os usuários explorem mapas complexos,
+            sobreponham camadas dinâmicas e extraiam inteligência territorial em tempo real através do navegador.
+          </p>
+          <div class="projetos__tags">
+            <span class="shimmer-text">MapLibre GL + Leaflet</span>
+            <span class="shimmer-text">Tailwind CSS</span>
+            <span class="shimmer-text">Docker</span>
+            <span class="shimmer-text">Context API</span>
+            <span class="shimmer-text">ReactJS + Vite</span>
+          </div>
+          <a href="https://app.idataspace.tec.br/geoviewer" target="_blank">
+            <div class="projetos__card-button">
+              <img src="./images/link.png" alt="Botao visualizar projeto">
+              Visualizar
+            </div>
+          </a>
+        </section>
+
         <!-- CasasContam -->
-        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1" data-ease="power3.out">
+        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
           <a href="https://casas-contam-historia.vercel.app/" target="_blank">
             <div class="card-img">
               <img src="./images/casascontam.png" alt="" class="projeto-img" />
@@ -287,7 +377,8 @@
         </section>
 
         <!-- Estacionamento -->
-        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1" data-ease="power3.out">
+        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
           <a href="" target="_blank">
             <div class="card-img">
               <img src="./images/maquete.jpg" alt="" class="projeto-img" />
@@ -310,7 +401,8 @@
 
         </section>
         <!-- Frogguer -->
-        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1" data-ease="power3.out">
+        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
           <a href="https://github.com/marcingabriel/FroggerGame" target="_blank">
             <div class="card-img">
               <img src="./images/projeto2.png" alt="" class="projeto-img" />
@@ -333,30 +425,9 @@
             </div>
           </a>
         </section>
-        <!-- Android -->
-        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1" data-ease="power3.out">
-          <a href="https://marcingabriel.github.io/projeto_site/android.html" target="_blank">
-            <div class="card-img">
-              <img src="./images/projeto1.png" alt="Botao visualizar projeto" class="projeto-img" />
-            </div>
-          </a>
-          <h2>Site Android</h2>
-          <p>
-            Meu primeiro projeto me aventurando na área do Front-end, esse elaborado durante meus estudos em HTML e CSS
-            em 2022.
-          </p>
-          <div class="projetos__tags">
-            <span class="shimmer-text">HTML</span>
-            <span class="shimmer-text">CSS</span>
-          </div>
-          <a href="https://marcingabriel.github.io/projeto_site/android.html" target="_blank">
-            <div class="projetos__card-button">
-              <img src="./images/link.png" alt="">
-              Visualizar
-            </div>
-          </a>
-        </section>
-        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1" data-ease="power3.out">
+
+        <!-- <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
           <a href="https://marcingabriel.github.io/projeto-social/" target="_blank">
             <div class="card-img">
               <img src="./images/projeto3.jpg" alt="" class="projeto-img" />
@@ -376,13 +447,14 @@
               Visualizar
             </div>
           </a>
-        </section>
-        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1" data-ease="power3.out">
+        </section> -->
+        <section class="projetos__card animated-content" data-distance="100" data-delay="0.1" data-duration="1"
+          data-ease="power3.out">
           <!-- Outros Projetos -->
           <section class="projetos__card">
             <a href="https://github.com/marcingabriel?tab=repositories" target="_blank">
               <div class="card-img">
-                <img src="./images/githubprojects.jpg " alt="" class="projeto-img " />
+                <img src="./images/github2.png " alt="" class="projeto-img " />
               </div>
             </a>
             <h2>Outros projetos </h2>
@@ -404,12 +476,27 @@
 
     </section>
 
+    <!-- Quote Section -->
+    <section class="quote-section">
+      <div class="quote-container animated-content" data-distance="50" data-delay="0.2" data-duration="1.5">
+        <div class="quote-mark">“</div>
+        <blockquote class="quote-text">
+          <span class="highlight">Nós só podemos ver um pouco do futuro,</span><br>
+          mas o suficiente para perceber que há muito a fazer.
+        </blockquote>
+        <div class="quote-author">
+          <span class="author-line"></span> ALAN TURING
+        </div>
+      </div>
+    </section>
+
 
     <!-- Sobre mim -->
     <section class="sobre-mim" id="sobre">
       <div class="sobre-mim__foto">
         <div class="tilted-card" id="sobre-mim-tilted-card">
-          <img class="animated-content" data-direction="horizontal" data-distance="80" data-reverse="true" data-duration="1.2" data-ease="power3.out" src="./images/eu.png" alt="Foto minha" />
+          <img class="animated-content" data-direction="horizontal" data-distance="80" data-reverse="true"
+            data-duration="1.2" data-ease="power3.out" src="./images/eu.png" alt="Foto minha" />
           <div class="tilted-card-overlay">
             <p>Marcio Gabriel - Dev</p>
           </div>
@@ -419,12 +506,13 @@
         <h1 class="scroll-float-text">Sobre mim</h1>
         <h2 class="animated-content" data-distance="50" data-delay="0.1" data-duration="1">Timoteo, Minas Gerais</h2>
         <p class="animated-content" data-distance="50" data-delay="0.2" data-duration="1">
-          Graduando em Engenharia de Computação pelo CEFET-MG com experiência em DevOps, Infraestrutura Cloud e
+          Graduado em Engenharia de Computação pelo CEFET-MG com experiência em DevOps, Infraestrutura Cloud e
           Desenvolvimento de Software/Web. Possuo vivência na implantação, manutenção e observabilidade de sistemas
           utilizando Docker e a stack Prometheus/Grafana, além de experiência prática em Inteligência Artificial com
           Python e no desenvolvimento de aplicações web utilizando React, Django e Ruby on Rails.
         </p>
-        <div class="sobre-mim__descricao-buttons animated-content" data-distance="50" data-delay="0.4" data-duration="1">
+        <div class="sobre-mim__descricao-buttons animated-content" data-distance="50" data-delay="0.4"
+          data-duration="1">
           <div class="sobre-mim__descricao-buttons-curriculo" onclick="openResumeModal()">
             <img src="./images/download-da-nuvem.png" alt="" />
             <p data-scramble="Currículo">Currículo</p>
@@ -473,7 +561,7 @@
         <div class="footer-info" style="text-align: center; color: #b5b5b5; letter-spacing: 1px; margin-top: 2rem;">
           <p style="font-size: 1rem; margin: 0;">Desenvolvido por <a
               href="https://br.linkedin.com/in/marcio-gabriel-gon%C3%A7alves-soares-133716221" target="_blank"
-              style="color: #0f9c02; font-weight: bold; text-decoration: none;">Marcio Gabriel</a></p>
+              class="animated-gradient-text">Marcio Gabriel</a></p>
           <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.5;">© 2026 Todos os direitos reservados.</p>
         </div>
       </div>
@@ -499,6 +587,9 @@
   <script src="assets/js/flowfield.js"></script>
   <script src="assets/js/magic-bento.js"></script>
   <script src="assets/js/web-threads.bundle.js"></script>
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/border-glow.js"></script>
+  <script src="assets/js/menu-mobile.js"></script>
   <script src="https://kit.fontawesome.com/6cc6e36814.js" crossorigin="anonymous"></script>
   <!-- Spline 3D Viewer -->
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>

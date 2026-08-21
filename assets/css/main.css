@@ -39,9 +39,17 @@
   --border-subtle: rgba(255, 255, 255, 0.05);
 }
 
-body {
+body,
+html {
   margin: 0;
   border: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* Fix horizontal scrollbar */
+}
+
+body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   font-family: "Space Grotesk", sans-serif;
@@ -100,6 +108,15 @@ footer span:hover {
 .sobre-mim {
   background-color: var(--bg-panel);
   position: relative;
+}
+
+.projetos {
+  padding-bottom: 60px !important;
+  /* Force override of media queries */
+}
+
+.sobre-mim {
+  padding-top: 3.25%;
 }
 
 h1 {
@@ -317,7 +334,8 @@ a {
   position: relative;
   left: 5%;
   /* <-- Empurra a coluna inteira 5% para a direita */
-  z-index: 30; /* Subindo o Z-index para ficar acima de qualquer overlay */
+  z-index: 30;
+  /* Subindo o Z-index para ficar acima de qualquer overlay */
   pointer-events: auto;
 }
 
@@ -341,7 +359,8 @@ a {
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
-  pointer-events: auto; /* Garante interação com o mouse */
+  pointer-events: auto;
+  /* Garante interação com o mouse */
   /* Um pequeno truque de zoom para o modelo 3D "pular" da tela! */
   transform: scale(1.25);
   transform-origin: center right;
@@ -684,8 +703,10 @@ ul.icons li .icon:before {
   right: 20px;
   width: 400px;
   height: 400px;
-  z-index: 50; /* Aumentado para ficar acima da .sobre-mim__descricao */
-  pointer-events: auto; /* Garante que reage ao mouse */
+  z-index: 50;
+  /* Aumentado para ficar acima da .sobre-mim__descricao */
+  pointer-events: auto;
+  /* Garante que reage ao mouse */
 }
 
 @media (max-width: 880px) {
@@ -701,8 +722,8 @@ ul.icons li .icon:before {
 
 .sobre-mim__descricao {
   line-height: 1.5rem;
-  width: 70%;
-  padding-left: 60px;
+  width: 75%;
+  padding-left: 40px;
 }
 
 .sobre-mim h2 {
@@ -1065,7 +1086,7 @@ ul.icons li .icon:before {
   .sobre-mim,
   .experiencias,
   .projetos {
-    padding: 30% 0;
+    padding: 30% 5%;
     text-align: center;
   }
 
@@ -1078,8 +1099,18 @@ ul.icons li .icon:before {
   }
 
   .principal__right {
-    width: 80%;
+    width: 100%;
     margin: 2rem auto;
+  }
+
+  .hero-3d-wrapper {
+    min-height: 450px;
+    max-width: 100%;
+  }
+
+  .principal__right spline-viewer {
+    transform: scale(1);
+    transform-origin: center center;
   }
 
   .sobre-mim {
@@ -1111,8 +1142,12 @@ ul.icons li .icon:before {
   .projetos__wrapper {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 5%;
-    margin-bottom: 10rem;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .projetos {
+    padding-bottom: 5rem !important;
   }
 
   .projetos__card-button {
@@ -1387,6 +1422,9 @@ ul.icons li .icon:before {
   display: inline-block;
   overflow: hidden;
   padding-bottom: 5px;
+  padding-top: 15px;
+  /* Prevent ascenders from clipping */
+  margin-top: -15px;
   /* Prevent descenders from clipping */
 }
 
@@ -1484,19 +1522,21 @@ ul.icons li .icon:before {
 .timeline-card {
   width: 100%;
   background: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 12px;
   position: relative;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   box-sizing: border-box;
+  transform: translateZ(0);
+  /* Hardware acceleration layer */
 }
 
 .timeline-card:hover {
-  border-color: rgba(15, 156, 2, 0.4);
-  box-shadow: 0 4px 30px rgba(15, 156, 2, 0.1);
+  box-shadow: 0 4px 40px rgba(15, 156, 2, 0.2);
 }
 
 /* Glowing Node */
@@ -1550,6 +1590,7 @@ ul.icons li .icon:before {
   color: #b5b5b5;
   line-height: 1.6;
 }
+
 .timeline-card ul li {
   margin-bottom: 0.5rem;
 }
@@ -1559,8 +1600,9 @@ ul.icons li .icon:before {
   .timeline-container::before {
     left: 20px;
   }
-  
-  .timeline-item, .timeline-item:nth-child(even) {
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
     width: 100%;
     margin-left: 0;
     justify-content: flex-start;
@@ -1568,8 +1610,128 @@ ul.icons li .icon:before {
     padding-right: 0;
   }
 
-  .timeline-node, .timeline-item:nth-child(even) .timeline-node {
+  .timeline-node,
+  .timeline-item:nth-child(even) .timeline-node {
     left: 10px;
     right: auto;
+  }
+}
+
+/* Animated Gradient Text */
+.animated-gradient-text {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-pan 3s linear infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.animated-gradient-text:hover {
+  transform: scale(1.15);
+}
+
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Quote Section */
+.quote-section {
+  position: relative;
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: var(--bg-panel);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.quote-container {
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18rem;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.quote-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  color: #b5b5b5;
+  margin: 0 0 2.5rem 0;
+  position: relative;
+}
+
+.quote-text .highlight {
+  color: #fff;
+  font-weight: 400;
+}
+
+.quote-author {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #1ea875;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.quote-author .author-line {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1ea875);
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1.3rem;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .quote-text br {
+    display: none;
+  }
+
+  .quote-mark {
+    font-size: 12rem;
+    top: -50px;
   }
 }
