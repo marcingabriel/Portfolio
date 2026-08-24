@@ -1,0 +1,161 @@
+/**
+ * @name: FlowField (Vanilla JS)
+ * @description: Canvas particle flow field background — organic noise-driven streams of glowing light.
+ * Translated from KokonutUI for Impeccable OverDrive
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const canvases = document.querySelectorAll(".flowfield-canvas");
+  if (!canvases.length) return;
+
+  canvases.forEach(canvas => {
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Configuration for "aurora" theme
+    const cfg = {
+      hueStart: 120,
+      hueRange: 200,
+      saturation: 90,
+      lightness: 62,
+      bg: "5, 5, 8",
+      trailAlpha: 0.06,
+    };
+    
+    const count = 350; // Reduced for performance, originally 500
+    const dpr = window.devicePixelRatio || 1;
+
+    let width = 0;
+    let height = 0;
+    let animId = 0;
+    let time = 0;
+    let particles = [];
+
+    function fieldAngle(x, y, t) {
+      const s = 0.0025;
+      return (
+        Math.sin(x * s + t * 0.0007) * Math.PI +
+        Math.cos(y * s + t * 0.0005) * Math.PI +
+        Math.sin((x + y) * s * 0.6 + t * 0.0009) * Math.PI * 0.6 +
+        Math.cos((x - y) * s * 0.4 + t * 0.0006) * Math.PI * 0.4
+      );
+    }
+
+    function spawnParticle() {
+      const maxLife = 200 + Math.floor(Math.random() * 300);
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        speed: 1.5 + Math.random() * 2.2,
+        hue: cfg.hueStart + Math.random() * cfg.hueRange,
+        life: Math.floor(Math.random() * maxLife),
+        maxLife,
+      };
+    }
+
+    function resize() {
+      const parent = canvas.parentElement;
+      width = parent.clientWidth || window.innerWidth;
+      height = parent.clientHeight || window.innerHeight;
+      
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.scale(dpr, dpr);
+
+      ctx.fillStyle = `rgb(${cfg.bg})`;
+      ctx.fillRect(0, 0, width, height);
+
+      particles = Array.from({ length: count }, spawnParticle);
+    }
+
+    function render() {
+      time++;
+
+      ctx.fillStyle = `rgba(${cfg.bg}, ${cfg.trailAlpha})`;
+      ctx.fillRect(0, 0, width, height);
+
+      for (const p of particles) {
+        const angle = fieldAngle(p.x, p.y, time);
+
+        p.x += Math.cos(angle) * p.speed;
+        p.y += Math.sin(angle) * p.speed;
+        p.life++;
+
+        if (p.life > p.maxLife) {
+          p.x = Math.random() * width;
+          p.y = Math.random() * height;
+          p.life = 0;
+          p.hue = cfg.hueStart + Math.random() * cfg.hueRange;
+          continue;
+        }
+
+        if (p.x < 0) p.x += width;
+        else if (p.x > width) p.x -= width;
+        if (p.y < 0) p.y += height;
+        else if (p.y > height) p.y -= height;
+
+        const progress = p.life / p.maxLife;
+        const fadeIn = Math.min(progress * 8, 1);
+        const fadeOut = Math.min((1 - progress) * 6, 1);
+        const alpha = fadeIn * fadeOut * 0.35; // Lower opacity for subtlety
+
+        const hueMod = (p.hue + (angle / (Math.PI * 2)) * 70 + 360) % 360;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${hueMod}, ${cfg.saturation}%, ${cfg.lightness}%, ${alpha * 1.2})`;
+        ctx.fill();
+      }
+
+      animId = requestAnimationFrame(render);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    
+    // Optional IntersectionObserver so we don't render off-screen
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        if (!animId) animId = requestAnimationFrame(render);
+      } else {
+        if (animId) {
+          cancelAnimationFrame(animId);
+          animId = 0;
+        }
+      }
+    });
+    io.observe(canvas);
+  });
+
+  // --- 3D Tilt Effect ---
+  const tiltWrapper = document.getElementById('hero-tilt');
+  const tiltImg = tiltWrapper ? tiltWrapper.querySelector('.hero-3d-img') : null;
+
+  if (tiltWrapper && tiltImg) {
+    tiltWrapper.addEventListener('mousemove', (e) => {
+      const rect = tiltWrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -20; // Max 20deg
+      const rotateY = ((x - centerX) / centerX) * 20;
+      
+      // Dynamic shadow opposing the tilt to simulate a light source and depth
+      const shadowX = rotateY * -1;
+      const shadowY = rotateX * 1;
+
+      tiltImg.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.1, 1.1, 1.1) translateZ(40px)`;
+      tiltImg.style.filter = `drop-shadow(${shadowX}px ${shadowY}px 30px rgba(0,0,0,0.9)) drop-shadow(0 0 20px rgba(102, 24, 180, 0.4))`;
+    });
+
+    tiltWrapper.addEventListener('mouseleave', () => {
+      tiltImg.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateZ(20px)`;
+      tiltImg.style.filter = `drop-shadow(0 20px 30px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 20px rgba(102, 24, 180, 0.4))`;
+    });
+  }
+});
